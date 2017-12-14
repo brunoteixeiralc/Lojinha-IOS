@@ -27,6 +27,9 @@ class FeedTableViewController: UITableViewController {
         
         navigationItem.title = "Lista de produtos"
         fetchProducts()
+        
+        tableView.estimatedRowHeight = tableView.rowHeight
+        tableView.rowHeight = UITableViewAutomaticDimension
     }
 
     func fetchProducts(){
@@ -49,6 +52,9 @@ class FeedTableViewController: UITableViewController {
             return 0
         }
     }
+    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 451
+    }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: FeedTableViewController.StoryBoard.feedProductCell, for: indexPath) as! FeedProductCell
@@ -56,6 +62,7 @@ class FeedTableViewController: UITableViewController {
         if let products = products{
             let product = products[indexPath.row]
             cell.product = product
+            cell.selectionStyle = .none
         }
         
         return cell
