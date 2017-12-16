@@ -11,10 +11,13 @@ class ProductDetailTVC: UITableViewController {
     
     var product:Product!
     
+    @IBOutlet weak var productImagesHeaderView:ProductImagesHeaderView!
+    
     struct Storyboard {
         static let productDetailCell = "ProductDetailCell"
         static let buyButtomCell = "BuyButtonCell"
         static let showProductDetailCell = "ShowProductDetailCell"
+        static let showImagesPageViewController = "ShowImagesPageViewController"
     }
     
     override func viewDidLoad() {
@@ -25,6 +28,15 @@ class ProductDetailTVC: UITableViewController {
         tableView.estimatedRowHeight = tableView.rowHeight
         tableView.rowHeight = UITableViewAutomaticDimension
     }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == Storyboard.showImagesPageViewController{
+            if let imagesPageVC = segue.destination as? ProductImagesPageViewController{
+                imagesPageVC.images = product.image
+                imagesPageVC.pageViewControllerDelegate = productImagesHeaderView
+            }
+        }
+    }
 
     // MARK: - Table view data source
 
@@ -34,6 +46,13 @@ class ProductDetailTVC: UITableViewController {
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return 4
+    }
+    
+    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        if indexPath.row == 0{
+            return 175
+        }
+        return 65
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {

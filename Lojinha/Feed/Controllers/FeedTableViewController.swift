@@ -10,9 +10,11 @@ import UIKit
 class FeedTableViewController: UITableViewController {
 
     var products: [Product]?
+    private var selectedProduct : Product?
     
     struct StoryBoard {
         static let feedProductCell = "FeedProductCell"
+        static let showProductDetail = "ShowProductDetail"
     }
     
     var searchBar: UISearchBar!
@@ -36,6 +38,14 @@ class FeedTableViewController: UITableViewController {
         
         products = Product.fetchProducts()
         tableView.reloadData()
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == StoryBoard.showProductDetail{
+            if let productDetailVC = segue.destination as? ProductDetailTVC{
+                productDetailVC.product = selectedProduct
+            }
+        }
     }
     
     // MARK: - Table view data source
@@ -66,5 +76,11 @@ class FeedTableViewController: UITableViewController {
         }
         
         return cell
+    }
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        selectedProduct = products?[indexPath.row]
+        performSegue(withIdentifier: StoryBoard.showProductDetail, sender: nil)
+    
     }
 }

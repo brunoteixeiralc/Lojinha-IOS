@@ -18,6 +18,9 @@
 		F43065F21FE206CC00FCD895 /* ProductDetailCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F43065F11FE206CC00FCD895 /* ProductDetailCell.swift */; };
 		F43065F41FE2071600FCD895 /* BuyButtonCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F43065F31FE2071600FCD895 /* BuyButtonCell.swift */; };
 		F43065FB1FE208B000FCD895 /* ProductDetailTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F43065FA1FE208B000FCD895 /* ProductDetailTVC.swift */; };
+		F43065FD1FE4894D00FCD895 /* ProductImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F43065FC1FE4894D00FCD895 /* ProductImageViewController.swift */; };
+		F43065FF1FE48A0200FCD895 /* ProductImagesPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F43065FE1FE48A0200FCD895 /* ProductImagesPageViewController.swift */; };
+		F43066011FE4A3C700FCD895 /* ProductImagesHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F43066001FE4A3C700FCD895 /* ProductImagesHeaderView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +37,9 @@
 		F43065F11FE206CC00FCD895 /* ProductDetailCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductDetailCell.swift; sourceTree = "<group>"; };
 		F43065F31FE2071600FCD895 /* BuyButtonCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuyButtonCell.swift; sourceTree = "<group>"; };
 		F43065FA1FE208B000FCD895 /* ProductDetailTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductDetailTVC.swift; sourceTree = "<group>"; };
+		F43065FC1FE4894D00FCD895 /* ProductImageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductImageViewController.swift; sourceTree = "<group>"; };
+		F43065FE1FE48A0200FCD895 /* ProductImagesPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductImagesPageViewController.swift; sourceTree = "<group>"; };
+		F43066001FE4A3C700FCD895 /* ProductImagesHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductImagesHeaderView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -82,6 +88,7 @@
 			children = (
 				F43065F81FE207E300FCD895 /* Views */,
 				F43065F91FE207EB00FCD895 /* Controllers */,
+				F43066021FE4B27700FCD895 /* SlideImage */,
 			);
 			path = Feed;
 			sourceTree = "<group>";
@@ -122,6 +129,16 @@
 			path = Controllers;
 			sourceTree = "<group>";
 		};
+		F43066021FE4B27700FCD895 /* SlideImage */ = {
+			isa = PBXGroup;
+			children = (
+				F43065FC1FE4894D00FCD895 /* ProductImageViewController.swift */,
+				F43065FE1FE48A0200FCD895 /* ProductImagesPageViewController.swift */,
+				F43066001FE4A3C700FCD895 /* ProductImagesHeaderView.swift */,
+			);
+			path = SlideImage;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -149,7 +166,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0830;
-				LastUpgradeCheck = 0830;
+				LastUpgradeCheck = 0920;
 				TargetAttributes = {
 					F40867DA1F283B6F00C91A55 = {
 						CreatedOnToolsVersion = 8.3.3;
@@ -195,7 +212,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F43065FF1FE48A0200FCD895 /* ProductImagesPageViewController.swift in Sources */,
 				F40867DF1F283B6F00C91A55 /* AppDelegate.swift in Sources */,
+				F43065FD1FE4894D00FCD895 /* ProductImageViewController.swift in Sources */,
+				F43066011FE4A3C700FCD895 /* ProductImagesHeaderView.swift in Sources */,
 				F4072CB01FA7FDF800768005 /* Product.swift in Sources */,
 				F4072CB41FA8060800768005 /* FeedProductCell.swift in Sources */,
 				F43065F21FE206CC00FCD895 /* ProductDetailCell.swift in Sources */,
@@ -237,7 +257,9 @@
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
@@ -245,7 +267,11 @@
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -288,7 +314,9 @@
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
@@ -296,7 +324,11 @@
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
