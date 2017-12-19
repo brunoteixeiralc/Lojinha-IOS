@@ -35,9 +35,9 @@ class FeedTableViewController: UITableViewController {
     }
 
     func fetchProducts(){
-        
         products = Product.fetchProducts()
         tableView.reloadData()
+        
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
