@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F406E7B71FEB26DC006C05CC /* ShoppingBagTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F406E7B61FEB26DC006C05CC /* ShoppingBagTableViewController.swift */; };
+		F406E7B91FEB27E4006C05CC /* NumberOfItemsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F406E7B81FEB27E4006C05CC /* NumberOfItemsCell.swift */; };
+		F406E7BB1FEB27FC006C05CC /* ShoppingCartItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F406E7BA1FEB27FC006C05CC /* ShoppingCartItemCell.swift */; };
+		F406E7BE1FEB3E03006C05CC /* CheckoutTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F406E7BD1FEB3E03006C05CC /* CheckoutTableViewController.swift */; };
+		F406E7C01FEB3EFA006C05CC /* CreditCardInformationCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F406E7BF1FEB3EFA006C05CC /* CreditCardInformationCell.swift */; };
 		F4072CB01FA7FDF800768005 /* Product.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4072CAF1FA7FDF800768005 /* Product.swift */; };
 		F4072CB21FA8023300768005 /* FeedTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4072CB11FA8023300768005 /* FeedTableViewController.swift */; };
 		F4072CB41FA8060800768005 /* FeedProductCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4072CB31FA8060800768005 /* FeedProductCell.swift */; };
@@ -25,6 +30,11 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		F406E7B61FEB26DC006C05CC /* ShoppingBagTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShoppingBagTableViewController.swift; sourceTree = "<group>"; };
+		F406E7B81FEB27E4006C05CC /* NumberOfItemsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumberOfItemsCell.swift; sourceTree = "<group>"; };
+		F406E7BA1FEB27FC006C05CC /* ShoppingCartItemCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShoppingCartItemCell.swift; sourceTree = "<group>"; };
+		F406E7BD1FEB3E03006C05CC /* CheckoutTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckoutTableViewController.swift; sourceTree = "<group>"; };
+		F406E7BF1FEB3EFA006C05CC /* CreditCardInformationCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreditCardInformationCell.swift; sourceTree = "<group>"; };
 		F4072CAF1FA7FDF800768005 /* Product.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Product.swift; sourceTree = "<group>"; };
 		F4072CB11FA8023300768005 /* FeedTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedTableViewController.swift; sourceTree = "<group>"; };
 		F4072CB31FA8060800768005 /* FeedProductCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedProductCell.swift; sourceTree = "<group>"; };
@@ -40,6 +50,7 @@
 		F43065FC1FE4894D00FCD895 /* ProductImageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductImageViewController.swift; sourceTree = "<group>"; };
 		F43065FE1FE48A0200FCD895 /* ProductImagesPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductImagesPageViewController.swift; sourceTree = "<group>"; };
 		F43066001FE4A3C700FCD895 /* ProductImagesHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductImagesHeaderView.swift; sourceTree = "<group>"; };
+		F433274D1FE89FFA00E74931 /* Lojinha copy-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "Lojinha copy-Info.plist"; path = "/Users/brunolemgruber/XcodeProjects/Lojinha/Lojinha copy-Info.plist"; sourceTree = "<absolute>"; };
 		F47B5CEA1FE88B2700ECC432 /* SuggestionCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuggestionCollectionViewCell.swift; sourceTree = "<group>"; };
 		F47B5CEC1FE88BC600ECC432 /* SuggestionTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuggestionTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -61,6 +72,7 @@
 				F40867F01F2843CD00C91A55 /* .gitignore */,
 				F40867DD1F283B6F00C91A55 /* Lojinha */,
 				F40867DC1F283B6F00C91A55 /* Products */,
+				F433274D1FE89FFA00E74931 /* Lojinha copy-Info.plist */,
 			);
 			sourceTree = "<group>";
 		};
@@ -119,6 +131,9 @@
 				F4072CB31FA8060800768005 /* FeedProductCell.swift */,
 				F47B5CEA1FE88B2700ECC432 /* SuggestionCollectionViewCell.swift */,
 				F47B5CEC1FE88BC600ECC432 /* SuggestionTableViewCell.swift */,
+				F406E7B81FEB27E4006C05CC /* NumberOfItemsCell.swift */,
+				F406E7BA1FEB27FC006C05CC /* ShoppingCartItemCell.swift */,
+				F406E7BF1FEB3EFA006C05CC /* CreditCardInformationCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -128,6 +143,8 @@
 			children = (
 				F4072CB11FA8023300768005 /* FeedTableViewController.swift */,
 				F43065FA1FE208B000FCD895 /* ProductDetailTVC.swift */,
+				F406E7B61FEB26DC006C05CC /* ShoppingBagTableViewController.swift */,
+				F406E7BD1FEB3E03006C05CC /* CheckoutTableViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -214,15 +231,20 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F406E7B91FEB27E4006C05CC /* NumberOfItemsCell.swift in Sources */,
 				F43065FF1FE48A0200FCD895 /* ProductImagesPageViewController.swift in Sources */,
+				F406E7C01FEB3EFA006C05CC /* CreditCardInformationCell.swift in Sources */,
 				F47B5CEB1FE88B2700ECC432 /* SuggestionCollectionViewCell.swift in Sources */,
 				F40867DF1F283B6F00C91A55 /* AppDelegate.swift in Sources */,
+				F406E7B71FEB26DC006C05CC /* ShoppingBagTableViewController.swift in Sources */,
 				F43065FD1FE4894D00FCD895 /* ProductImageViewController.swift in Sources */,
 				F43066011FE4A3C700FCD895 /* ProductImagesHeaderView.swift in Sources */,
 				F4072CB01FA7FDF800768005 /* Product.swift in Sources */,
 				F4072CB41FA8060800768005 /* FeedProductCell.swift in Sources */,
 				F43065F21FE206CC00FCD895 /* ProductDetailCell.swift in Sources */,
 				F43065FB1FE208B000FCD895 /* ProductDetailTVC.swift in Sources */,
+				F406E7BE1FEB3E03006C05CC /* CheckoutTableViewController.swift in Sources */,
+				F406E7BB1FEB27FC006C05CC /* ShoppingCartItemCell.swift in Sources */,
 				F43065F41FE2071600FCD895 /* BuyButtonCell.swift in Sources */,
 				F4072CB21FA8023300768005 /* FeedTableViewController.swift in Sources */,
 				F47B5CED1FE88BC600ECC432 /* SuggestionTableViewCell.swift in Sources */,
