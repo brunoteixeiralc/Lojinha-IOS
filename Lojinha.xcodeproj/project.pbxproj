@@ -7,11 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		060FECFC6849FB30DD93AF1E /* Pods_Lojinha.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6521B93CE53EC02D44087CD7 /* Pods_Lojinha.framework */; };
 		F406E7B71FEB26DC006C05CC /* ShoppingBagTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F406E7B61FEB26DC006C05CC /* ShoppingBagTableViewController.swift */; };
 		F406E7B91FEB27E4006C05CC /* NumberOfItemsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F406E7B81FEB27E4006C05CC /* NumberOfItemsCell.swift */; };
 		F406E7BB1FEB27FC006C05CC /* ShoppingCartItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F406E7BA1FEB27FC006C05CC /* ShoppingCartItemCell.swift */; };
 		F406E7BE1FEB3E03006C05CC /* CheckoutTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F406E7BD1FEB3E03006C05CC /* CheckoutTableViewController.swift */; };
 		F406E7C01FEB3EFA006C05CC /* CreditCardInformationCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F406E7BF1FEB3EFA006C05CC /* CreditCardInformationCell.swift */; };
+		F406E7C21FF478A0006C05CC /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = F406E7C11FF478A0006C05CC /* GoogleService-Info.plist */; };
 		F4072CB01FA7FDF800768005 /* Product.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4072CAF1FA7FDF800768005 /* Product.swift */; };
 		F4072CB21FA8023300768005 /* FeedTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4072CB11FA8023300768005 /* FeedTableViewController.swift */; };
 		F4072CB41FA8060800768005 /* FeedProductCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4072CB31FA8060800768005 /* FeedProductCell.swift */; };
@@ -30,11 +32,15 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		6521B93CE53EC02D44087CD7 /* Pods_Lojinha.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Lojinha.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B100EC11426409C808CED369 /* Pods-Lojinha.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Lojinha.release.xcconfig"; path = "Pods/Target Support Files/Pods-Lojinha/Pods-Lojinha.release.xcconfig"; sourceTree = "<group>"; };
+		E2CD9BE99CE5C8C4277B2A14 /* Pods-Lojinha.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Lojinha.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Lojinha/Pods-Lojinha.debug.xcconfig"; sourceTree = "<group>"; };
 		F406E7B61FEB26DC006C05CC /* ShoppingBagTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShoppingBagTableViewController.swift; sourceTree = "<group>"; };
 		F406E7B81FEB27E4006C05CC /* NumberOfItemsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumberOfItemsCell.swift; sourceTree = "<group>"; };
 		F406E7BA1FEB27FC006C05CC /* ShoppingCartItemCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShoppingCartItemCell.swift; sourceTree = "<group>"; };
 		F406E7BD1FEB3E03006C05CC /* CheckoutTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckoutTableViewController.swift; sourceTree = "<group>"; };
 		F406E7BF1FEB3EFA006C05CC /* CreditCardInformationCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreditCardInformationCell.swift; sourceTree = "<group>"; };
+		F406E7C11FF478A0006C05CC /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		F4072CAF1FA7FDF800768005 /* Product.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Product.swift; sourceTree = "<group>"; };
 		F4072CB11FA8023300768005 /* FeedTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedTableViewController.swift; sourceTree = "<group>"; };
 		F4072CB31FA8060800768005 /* FeedProductCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedProductCell.swift; sourceTree = "<group>"; };
@@ -60,12 +66,30 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				060FECFC6849FB30DD93AF1E /* Pods_Lojinha.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		347DCC2F301804C1F5DC654B /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				6521B93CE53EC02D44087CD7 /* Pods_Lojinha.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		A38EE8EB4C150C1575418637 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				E2CD9BE99CE5C8C4277B2A14 /* Pods-Lojinha.debug.xcconfig */,
+				B100EC11426409C808CED369 /* Pods-Lojinha.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		F40867D21F283B6F00C91A55 = {
 			isa = PBXGroup;
 			children = (
@@ -73,6 +97,8 @@
 				F40867DD1F283B6F00C91A55 /* Lojinha */,
 				F40867DC1F283B6F00C91A55 /* Products */,
 				F433274D1FE89FFA00E74931 /* Lojinha copy-Info.plist */,
+				A38EE8EB4C150C1575418637 /* Pods */,
+				347DCC2F301804C1F5DC654B /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -90,6 +116,7 @@
 				F40867DE1F283B6F00C91A55 /* AppDelegate.swift */,
 				F40867E51F283B6F00C91A55 /* Assets.xcassets */,
 				F40867EA1F283B6F00C91A55 /* Info.plist */,
+				F406E7C11FF478A0006C05CC /* GoogleService-Info.plist */,
 				F43065F71FE207B000FCD895 /* Storyboards */,
 				F43065F61FE2078F00FCD895 /* Model */,
 				F43065F51FE2075D00FCD895 /* Feed */,
@@ -166,9 +193,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = F40867ED1F283B6F00C91A55 /* Build configuration list for PBXNativeTarget "Lojinha" */;
 			buildPhases = (
+				43AE98FC3C6EE2FD772BB693 /* [CP] Check Pods Manifest.lock */,
 				F40867D71F283B6F00C91A55 /* Sources */,
 				F40867D81F283B6F00C91A55 /* Frameworks */,
 				F40867D91F283B6F00C91A55 /* Resources */,
+				2B14798582B2181F08AABDF7 /* [CP] Embed Pods Frameworks */,
+				EA609448507BFB4DA5D07993 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -219,12 +249,73 @@
 			buildActionMask = 2147483647;
 			files = (
 				F40867F11F2843CD00C91A55 /* .gitignore in Resources */,
+				F406E7C21FF478A0006C05CC /* GoogleService-Info.plist in Resources */,
 				F40867E61F283B6F00C91A55 /* Assets.xcassets in Resources */,
 				F40867E41F283B6F00C91A55 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		2B14798582B2181F08AABDF7 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-Lojinha/Pods-Lojinha-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
+				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
+				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
+				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Lojinha/Pods-Lojinha-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		43AE98FC3C6EE2FD772BB693 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Lojinha-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		EA609448507BFB4DA5D07993 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Lojinha/Pods-Lojinha-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		F40867D71F283B6F00C91A55 /* Sources */ = {
@@ -374,6 +465,7 @@
 		};
 		F40867EE1F283B6F00C91A55 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E2CD9BE99CE5C8C4277B2A14 /* Pods-Lojinha.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 8UW672R5KC;
@@ -387,6 +479,7 @@
 		};
 		F40867EF1F283B6F00C91A55 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B100EC11426409C808CED369 /* Pods-Lojinha.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 8UW672R5KC;
