@@ -21,6 +21,10 @@
 		F40867E41F283B6F00C91A55 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F40867E21F283B6F00C91A55 /* Main.storyboard */; };
 		F40867E61F283B6F00C91A55 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F40867E51F283B6F00C91A55 /* Assets.xcassets */; };
 		F40867F11F2843CD00C91A55 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = F40867F01F2843CD00C91A55 /* .gitignore */; };
+		F427440C1FF5B9AC00A28250 /* RegisterTypeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F427440B1FF5B9AC00A28250 /* RegisterTypeViewController.swift */; };
+		F427440E1FF5BA7A00A28250 /* EmailTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F427440D1FF5BA7A00A28250 /* EmailTableViewController.swift */; };
+		F42744111FF5C0EE00A28250 /* ImagePickerHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = F42744101FF5C0EE00A28250 /* ImagePickerHelper.swift */; };
+		F42744131FF5CA4D00A28250 /* LoginTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F42744121FF5CA4D00A28250 /* LoginTableViewController.swift */; };
 		F43065F21FE206CC00FCD895 /* ProductDetailCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F43065F11FE206CC00FCD895 /* ProductDetailCell.swift */; };
 		F43065F41FE2071600FCD895 /* BuyButtonCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F43065F31FE2071600FCD895 /* BuyButtonCell.swift */; };
 		F43065FB1FE208B000FCD895 /* ProductDetailTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F43065FA1FE208B000FCD895 /* ProductDetailTVC.swift */; };
@@ -50,6 +54,10 @@
 		F40867E51F283B6F00C91A55 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F40867EA1F283B6F00C91A55 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F40867F01F2843CD00C91A55 /* .gitignore */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
+		F427440B1FF5B9AC00A28250 /* RegisterTypeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterTypeViewController.swift; sourceTree = "<group>"; };
+		F427440D1FF5BA7A00A28250 /* EmailTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailTableViewController.swift; sourceTree = "<group>"; };
+		F42744101FF5C0EE00A28250 /* ImagePickerHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePickerHelper.swift; sourceTree = "<group>"; };
+		F42744121FF5CA4D00A28250 /* LoginTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginTableViewController.swift; sourceTree = "<group>"; };
 		F43065F11FE206CC00FCD895 /* ProductDetailCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductDetailCell.swift; sourceTree = "<group>"; };
 		F43065F31FE2071600FCD895 /* BuyButtonCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuyButtonCell.swift; sourceTree = "<group>"; };
 		F43065FA1FE208B000FCD895 /* ProductDetailTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductDetailTVC.swift; sourceTree = "<group>"; };
@@ -124,12 +132,21 @@
 			path = Lojinha;
 			sourceTree = "<group>";
 		};
+		F427440F1FF5C09400A28250 /* Helper Classes */ = {
+			isa = PBXGroup;
+			children = (
+				F43066021FE4B27700FCD895 /* SliderProductImage */,
+				F42744101FF5C0EE00A28250 /* ImagePickerHelper.swift */,
+			);
+			path = "Helper Classes";
+			sourceTree = "<group>";
+		};
 		F43065F51FE2075D00FCD895 /* Feed */ = {
 			isa = PBXGroup;
 			children = (
+				F427440F1FF5C09400A28250 /* Helper Classes */,
 				F43065F81FE207E300FCD895 /* Views */,
 				F43065F91FE207EB00FCD895 /* Controllers */,
-				F43066021FE4B27700FCD895 /* SliderProductImage */,
 			);
 			path = Feed;
 			sourceTree = "<group>";
@@ -172,6 +189,9 @@
 				F43065FA1FE208B000FCD895 /* ProductDetailTVC.swift */,
 				F406E7B61FEB26DC006C05CC /* ShoppingBagTableViewController.swift */,
 				F406E7BD1FEB3E03006C05CC /* CheckoutTableViewController.swift */,
+				F427440B1FF5B9AC00A28250 /* RegisterTypeViewController.swift */,
+				F427440D1FF5BA7A00A28250 /* EmailTableViewController.swift */,
+				F42744121FF5CA4D00A28250 /* LoginTableViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -325,13 +345,16 @@
 				F406E7B91FEB27E4006C05CC /* NumberOfItemsCell.swift in Sources */,
 				F43065FF1FE48A0200FCD895 /* ProductImagesPageViewController.swift in Sources */,
 				F406E7C01FEB3EFA006C05CC /* CreditCardInformationCell.swift in Sources */,
+				F42744111FF5C0EE00A28250 /* ImagePickerHelper.swift in Sources */,
 				F47B5CEB1FE88B2700ECC432 /* SuggestionCollectionViewCell.swift in Sources */,
+				F427440C1FF5B9AC00A28250 /* RegisterTypeViewController.swift in Sources */,
 				F40867DF1F283B6F00C91A55 /* AppDelegate.swift in Sources */,
 				F406E7B71FEB26DC006C05CC /* ShoppingBagTableViewController.swift in Sources */,
 				F43065FD1FE4894D00FCD895 /* ProductImageViewController.swift in Sources */,
 				F43066011FE4A3C700FCD895 /* ProductImagesHeaderView.swift in Sources */,
 				F4072CB01FA7FDF800768005 /* Product.swift in Sources */,
 				F4072CB41FA8060800768005 /* FeedProductCell.swift in Sources */,
+				F427440E1FF5BA7A00A28250 /* EmailTableViewController.swift in Sources */,
 				F43065F21FE206CC00FCD895 /* ProductDetailCell.swift in Sources */,
 				F43065FB1FE208B000FCD895 /* ProductDetailTVC.swift in Sources */,
 				F406E7BE1FEB3E03006C05CC /* CheckoutTableViewController.swift in Sources */,
@@ -339,6 +362,7 @@
 				F43065F41FE2071600FCD895 /* BuyButtonCell.swift in Sources */,
 				F4072CB21FA8023300768005 /* FeedTableViewController.swift in Sources */,
 				F47B5CED1FE88BC600ECC432 /* SuggestionTableViewCell.swift in Sources */,
+				F42744131FF5CA4D00A28250 /* LoginTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
