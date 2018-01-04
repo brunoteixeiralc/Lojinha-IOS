@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Firebase
 
 class LoginTableViewController: UITableViewController {
 
@@ -17,7 +18,22 @@ class LoginTableViewController: UITableViewController {
         
         passwordTextField.delegate = self
         emailUserTextField.delegate = self
+    }
+    
+    @IBAction func createNewAccountDidTap() {
         
+        if(emailUserTextField.text != "" && (passwordTextField.text?.count)! > 6){
+            let email = emailUserTextField.text
+            let password = passwordTextField.text
+            
+            Auth.auth().signIn(withEmail: email!, password: password!, completion: { (firUser, error) in
+                if let error = error{
+                    fatalFirebaseError(error)
+                }else{
+                    self.dismiss(animated: true, completion: nil)
+                }
+            })
+        }
     }
     
     @IBAction func didTapBack(){
@@ -33,7 +49,7 @@ extension LoginTableViewController: UITextFieldDelegate{
             passwordTextField.becomeFirstResponder()
         }else if textField == passwordTextField{
             passwordTextField.resignFirstResponder()
-            //createNewAccountDidTap()
+            createNewAccountDidTap()
         }
         
         return true

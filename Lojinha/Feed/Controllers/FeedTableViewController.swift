@@ -6,15 +6,18 @@
 //
 
 import UIKit
+import Firebase
 
 class FeedTableViewController: UITableViewController {
 
     var products: [Product]?
     private var selectedProduct : Product?
+    var currentUser: User?
     
     struct StoryBoard {
         static let feedProductCell = "FeedProductCell"
         static let showProductDetail = "ShowProductDetail"
+        static let showWelcome = "ShowWelcome"
     }
     
     var searchBar: UISearchBar!
@@ -26,6 +29,19 @@ class FeedTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        Auth.auth().addStateDidChangeListener({ (auth, user) in
+            if user != nil{
+                DatabaseRef.user(uid: (user?.uid)!).ref().observeSingleEvent(of: .value, with: { (snapshot) in
+                    if let userDict = snapshot.value as? [String:Any]{
+                        self.currentUser = User(dictionary: userDict)
+                    }
+                })
+                
+            }else{
+                self.performSegue(withIdentifier: StoryBoard.showWelcome, sender: nil)
+            }
+        })
         
         navigationItem.title = "Lista de produtos"
         fetchProducts()
@@ -46,6 +62,10 @@ class FeedTableViewController: UITableViewController {
                 productDetailVC.product = selectedProduct
             }
         }
+    }
+    
+    @IBAction func logout(_ sender:Any){
+        try! Auth.auth().signOut()
     }
     
     // MARK: - Table view data source

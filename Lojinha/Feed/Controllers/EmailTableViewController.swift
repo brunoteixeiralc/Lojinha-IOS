@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Firebase
 
 class EmailTableViewController: UITableViewController {
 
@@ -33,6 +34,44 @@ class EmailTableViewController: UITableViewController {
     
     @IBAction func didTapBack(){
       dismiss(animated: true, completion: nil)
+    }
+    
+    @IBAction func didTapCreateNewUser(){
+        
+        if emailTextField.text != ""
+            && (passwordTextField.text?.count)! > 6
+            && (userNameTextField.text?.count)! > 6
+            && fullNameTextField.text != ""
+            && profileImage != nil{
+            
+            let email = emailTextField.text!
+            let password = passwordTextField.text!
+            let username = userNameTextField.text!
+            let fullname = fullNameTextField.text!
+            
+            Auth.auth().createUser(withEmail: email, password: password, completion: { (firuser, error) in
+                if(error != nil){
+                    
+                }else if let firuser = firuser{
+                    
+                    let newUser = User(uid: firuser.uid, email:email, userName: username, fullName: fullname, profileImage: self.profileImage)
+                    newUser.save(completion: { (error) in
+                        if error != nil{
+                            
+                        }else{
+                            Auth.auth().signIn(withEmail: email, password: password, completion: { (firuser, error) in
+                                if error != nil{
+                                    
+                                }else{
+                                    self.dismiss(animated: true, completion: nil)
+                                }
+                            })
+                            
+                        }
+                    })
+                }
+            })
+        }
     }
     
     @IBAction func changeProfileImageDidTap(_ sender: Any){

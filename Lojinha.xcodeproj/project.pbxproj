@@ -25,6 +25,11 @@
 		F427440E1FF5BA7A00A28250 /* EmailTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F427440D1FF5BA7A00A28250 /* EmailTableViewController.swift */; };
 		F42744111FF5C0EE00A28250 /* ImagePickerHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = F42744101FF5C0EE00A28250 /* ImagePickerHelper.swift */; };
 		F42744131FF5CA4D00A28250 /* LoginTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F42744121FF5CA4D00A28250 /* LoginTableViewController.swift */; };
+		F42744151FFDAE2800A28250 /* FirebaseReference.swift in Sources */ = {isa = PBXBuildFile; fileRef = F42744141FFDAE2800A28250 /* FirebaseReference.swift */; };
+		F42744171FFDB04300A28250 /* FIRImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = F42744161FFDB04300A28250 /* FIRImage.swift */; };
+		F42744191FFDB2FD00A28250 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = F42744181FFDB2FC00A28250 /* User.swift */; };
+		F427441B1FFDBDB100A28250 /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F427441A1FFDBDB100A28250 /* WelcomeViewController.swift */; };
+		F427441D1FFDC05D00A28250 /* Functions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F427441C1FFDC05D00A28250 /* Functions.swift */; };
 		F43065F21FE206CC00FCD895 /* ProductDetailCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F43065F11FE206CC00FCD895 /* ProductDetailCell.swift */; };
 		F43065F41FE2071600FCD895 /* BuyButtonCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F43065F31FE2071600FCD895 /* BuyButtonCell.swift */; };
 		F43065FB1FE208B000FCD895 /* ProductDetailTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F43065FA1FE208B000FCD895 /* ProductDetailTVC.swift */; };
@@ -58,6 +63,11 @@
 		F427440D1FF5BA7A00A28250 /* EmailTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailTableViewController.swift; sourceTree = "<group>"; };
 		F42744101FF5C0EE00A28250 /* ImagePickerHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePickerHelper.swift; sourceTree = "<group>"; };
 		F42744121FF5CA4D00A28250 /* LoginTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginTableViewController.swift; sourceTree = "<group>"; };
+		F42744141FFDAE2800A28250 /* FirebaseReference.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseReference.swift; sourceTree = "<group>"; };
+		F42744161FFDB04300A28250 /* FIRImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FIRImage.swift; sourceTree = "<group>"; };
+		F42744181FFDB2FC00A28250 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		F427441A1FFDBDB100A28250 /* WelcomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
+		F427441C1FFDC05D00A28250 /* Functions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Functions.swift; sourceTree = "<group>"; };
 		F43065F11FE206CC00FCD895 /* ProductDetailCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductDetailCell.swift; sourceTree = "<group>"; };
 		F43065F31FE2071600FCD895 /* BuyButtonCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuyButtonCell.swift; sourceTree = "<group>"; };
 		F43065FA1FE208B000FCD895 /* ProductDetailTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductDetailTVC.swift; sourceTree = "<group>"; };
@@ -137,6 +147,7 @@
 			children = (
 				F43066021FE4B27700FCD895 /* SliderProductImage */,
 				F42744101FF5C0EE00A28250 /* ImagePickerHelper.swift */,
+				F427441C1FFDC05D00A28250 /* Functions.swift */,
 			);
 			path = "Helper Classes";
 			sourceTree = "<group>";
@@ -154,7 +165,10 @@
 		F43065F61FE2078F00FCD895 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				F42744181FFDB2FC00A28250 /* User.swift */,
 				F4072CAF1FA7FDF800768005 /* Product.swift */,
+				F42744141FFDAE2800A28250 /* FirebaseReference.swift */,
+				F42744161FFDB04300A28250 /* FIRImage.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -192,6 +206,7 @@
 				F427440B1FF5B9AC00A28250 /* RegisterTypeViewController.swift */,
 				F427440D1FF5BA7A00A28250 /* EmailTableViewController.swift */,
 				F42744121FF5CA4D00A28250 /* LoginTableViewController.swift */,
+				F427441A1FFDBDB100A28250 /* WelcomeViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -347,7 +362,9 @@
 				F406E7C01FEB3EFA006C05CC /* CreditCardInformationCell.swift in Sources */,
 				F42744111FF5C0EE00A28250 /* ImagePickerHelper.swift in Sources */,
 				F47B5CEB1FE88B2700ECC432 /* SuggestionCollectionViewCell.swift in Sources */,
+				F427441D1FFDC05D00A28250 /* Functions.swift in Sources */,
 				F427440C1FF5B9AC00A28250 /* RegisterTypeViewController.swift in Sources */,
+				F427441B1FFDBDB100A28250 /* WelcomeViewController.swift in Sources */,
 				F40867DF1F283B6F00C91A55 /* AppDelegate.swift in Sources */,
 				F406E7B71FEB26DC006C05CC /* ShoppingBagTableViewController.swift in Sources */,
 				F43065FD1FE4894D00FCD895 /* ProductImageViewController.swift in Sources */,
@@ -355,11 +372,14 @@
 				F4072CB01FA7FDF800768005 /* Product.swift in Sources */,
 				F4072CB41FA8060800768005 /* FeedProductCell.swift in Sources */,
 				F427440E1FF5BA7A00A28250 /* EmailTableViewController.swift in Sources */,
+				F42744171FFDB04300A28250 /* FIRImage.swift in Sources */,
 				F43065F21FE206CC00FCD895 /* ProductDetailCell.swift in Sources */,
 				F43065FB1FE208B000FCD895 /* ProductDetailTVC.swift in Sources */,
 				F406E7BE1FEB3E03006C05CC /* CheckoutTableViewController.swift in Sources */,
+				F42744151FFDAE2800A28250 /* FirebaseReference.swift in Sources */,
 				F406E7BB1FEB27FC006C05CC /* ShoppingCartItemCell.swift in Sources */,
 				F43065F41FE2071600FCD895 /* BuyButtonCell.swift in Sources */,
+				F42744191FFDB2FD00A28250 /* User.swift in Sources */,
 				F4072CB21FA8023300768005 /* FeedTableViewController.swift in Sources */,
 				F47B5CED1FE88BC600ECC432 /* SuggestionTableViewCell.swift in Sources */,
 				F42744131FF5CA4D00A28250 /* LoginTableViewController.swift in Sources */,

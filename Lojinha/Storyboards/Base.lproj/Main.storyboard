@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="3wD-bc-D03">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="kmW-G4-fFe">
     <device id="retina5_5" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -22,10 +22,10 @@
         </array>
     </customFonts>
     <scenes>
-        <!--View Controller-->
+        <!--Welcome View Controller-->
         <scene sceneID="5jg-sk-pW3">
             <objects>
-                <viewController id="3wD-bc-D03" sceneMemberID="viewController">
+                <viewController id="3wD-bc-D03" customClass="WelcomeViewController" customModule="Lojinha" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="5Li-zM-Dqk"/>
                         <viewControllerLayoutGuide type="bottom" id="plJ-EJ-pAe"/>
@@ -110,12 +110,12 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UZl-8n-Bqk" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-3043" y="-951"/>
+            <point key="canvasLocation" x="4" y="-2351"/>
         </scene>
         <!--Login-->
         <scene sceneID="EsG-ab-U6I">
             <objects>
-                <tableViewController id="zZF-5c-3iY" customClass="LoginTableViewController" customModule="Lojinha" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="Circles" id="zZF-5c-3iY" customClass="LoginTableViewController" customModule="Lojinha" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" id="Itu-kr-c2r">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -215,6 +215,9 @@
                                                         </userDefinedRuntimeAttribute>
                                                         <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
                                                     </userDefinedRuntimeAttributes>
+                                                    <connections>
+                                                        <action selector="createNewAccountDidTap" destination="zZF-5c-3iY" eventType="touchUpInside" id="0eT-co-hut"/>
+                                                    </connections>
                                                 </button>
                                             </subviews>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -244,7 +247,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mVq-RY-pm6" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-3786.9565217391309" y="-232.33695652173915"/>
+            <point key="canvasLocation" x="-472" y="-1541"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Iti-U1-RvM">
@@ -260,7 +263,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="P0b-9y-8fD" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-3043" y="-232"/>
+            <point key="canvasLocation" x="-1272" y="-1541"/>
         </scene>
         <!--Register Type View Controller-->
         <scene sceneID="HyW-Uq-zXZ">
@@ -427,7 +430,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="j70-l9-Drr" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2243.4782608695655" y="-951.35869565217399"/>
+            <point key="canvasLocation" x="804" y="-2351"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="BKc-jW-rjh">
@@ -509,14 +512,22 @@
                             <outlet property="delegate" destination="IcZ-RA-a74" id="lb1-tU-NBy"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Root View Controller" id="kbj-be-nmX"/>
+                    <navigationItem key="navigationItem" title="Root View Controller" id="kbj-be-nmX">
+                        <barButtonItem key="rightBarButtonItem" title="Sair" id="kMP-Qf-pEv">
+                            <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <connections>
+                                <action selector="logout:" destination="IcZ-RA-a74" id="eUQ-sm-9eN"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <segue destination="cAI-fN-rpP" kind="show" identifier="ShowProductDetail" id="b98-u8-Vmi"/>
+                        <segue destination="3wD-bc-D03" kind="presentation" identifier="ShowWelcome" id="c9i-Dv-Z8s"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QpO-S8-xiu" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1597.1014492753625" y="-807.88043478260875"/>
+            <point key="canvasLocation" x="1472" y="-816"/>
         </scene>
         <!--Product DetailTVC-->
         <scene sceneID="wTJ-g1-908">
@@ -955,6 +966,9 @@
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="Continuar" id="RV7-a9-umr">
                             <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <connections>
+                                <action selector="didTapCreateNewUser" destination="S7j-c9-w7v" id="a5s-UE-nJk"/>
+                            </connections>
                         </barButtonItem>
                     </navigationItem>
                     <connections>
@@ -967,7 +981,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="e8e-EP-1oZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-710.14492753623199" y="-951.35869565217399"/>
+            <point key="canvasLocation" x="2339" y="-2351"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="C0p-IT-Uyr">
@@ -988,7 +1002,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tmz-HW-FMG" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1494" y="-951"/>
+            <point key="canvasLocation" x="1555" y="-2351"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Ma5-MJ-IIE">
@@ -1000,6 +1014,7 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="nd3-39-2Na">
                         <rect key="frame" x="0.0" y="20" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </navigationBar>
                     <connections>
                         <segue destination="IcZ-RA-a74" kind="relationship" relationship="rootViewController" id="Zo2-yN-pbP"/>
