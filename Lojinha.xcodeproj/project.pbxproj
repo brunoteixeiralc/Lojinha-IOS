@@ -137,7 +137,9 @@
 				F406E7C11FF478A0006C05CC /* GoogleService-Info.plist */,
 				F43065F71FE207B000FCD895 /* Storyboards */,
 				F43065F61FE2078F00FCD895 /* Model */,
-				F43065F51FE2075D00FCD895 /* Feed */,
+				F43065F81FE207E300FCD895 /* Views */,
+				F427440F1FF5C09400A28250 /* Helper Classes */,
+				F43065F91FE207EB00FCD895 /* Controllers */,
 			);
 			path = Lojinha;
 			sourceTree = "<group>";
@@ -150,16 +152,6 @@
 				F427441C1FFDC05D00A28250 /* Functions.swift */,
 			);
 			path = "Helper Classes";
-			sourceTree = "<group>";
-		};
-		F43065F51FE2075D00FCD895 /* Feed */ = {
-			isa = PBXGroup;
-			children = (
-				F427440F1FF5C09400A28250 /* Helper Classes */,
-				F43065F81FE207E300FCD895 /* Views */,
-				F43065F91FE207EB00FCD895 /* Controllers */,
-			);
-			path = Feed;
 			sourceTree = "<group>";
 		};
 		F43065F61FE2078F00FCD895 /* Model */ = {
