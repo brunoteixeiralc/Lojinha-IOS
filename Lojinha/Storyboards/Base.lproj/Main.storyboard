@@ -198,9 +198,8 @@
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="43.666666666666664"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AqT-qn-CyJ">
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AqT-qn-CyJ">
                                                     <rect key="frame" x="20" y="7" width="374" height="30"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <fontDescription key="fontDescription" name="AvenirNextCondensed-DemiBold" family="Avenir Next Condensed" pointSize="17"/>
                                                     <state key="normal" title="Entrar">
@@ -221,6 +220,12 @@
                                                 </button>
                                             </subviews>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <constraints>
+                                                <constraint firstAttribute="trailing" secondItem="AqT-qn-CyJ" secondAttribute="trailing" constant="20" id="7E0-JB-52D"/>
+                                                <constraint firstItem="AqT-qn-CyJ" firstAttribute="leading" secondItem="1b9-hF-bwt" secondAttribute="leading" constant="20" id="IYC-L8-cXg"/>
+                                                <constraint firstAttribute="bottom" secondItem="AqT-qn-CyJ" secondAttribute="bottom" constant="6.6699999999999999" id="N4g-PE-yvH"/>
+                                                <constraint firstItem="AqT-qn-CyJ" firstAttribute="top" secondItem="1b9-hF-bwt" secondAttribute="top" constant="7" id="TzT-b6-lIN"/>
+                                            </constraints>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </tableViewCell>
@@ -247,7 +252,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mVq-RY-pm6" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-472" y="-1541"/>
+            <point key="canvasLocation" x="-472.46376811594206" y="-1541.5760869565217"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Iti-U1-RvM">
@@ -915,7 +920,7 @@
                                     </tableViewCell>
                                 </cells>
                             </tableViewSection>
-                            <tableViewSection footerTitle="A senha tem que conter no mínimo 6 carecteres" id="PaM-zE-Cnm">
+                            <tableViewSection footerTitle="A senha tem que conter no mínimo 7 caracteres" id="PaM-zE-Cnm">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="Mmm-Q4-YOT">
                                         <rect key="frame" x="0.0" y="382.33333333333337" width="414" height="44"/>

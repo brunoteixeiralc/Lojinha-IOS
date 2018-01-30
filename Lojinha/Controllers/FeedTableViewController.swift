@@ -27,11 +27,11 @@ class FeedTableViewController: UITableViewController {
         }
     }
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(true)
         
         Auth.auth().addStateDidChangeListener({ (auth, user) in
-            if user != nil{
+            if user != nil {
                 DatabaseRef.user(uid: (user?.uid)!).ref().observeSingleEvent(of: .value, with: { (snapshot) in
                     if let userDict = snapshot.value as? [String:Any]{
                         self.currentUser = User(dictionary: userDict)
@@ -42,7 +42,11 @@ class FeedTableViewController: UITableViewController {
                 self.performSegue(withIdentifier: StoryBoard.showWelcome, sender: nil)
             }
         })
-        
+    }
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+
         navigationItem.title = "Lista de produtos"
         fetchProducts()
         
@@ -68,7 +72,6 @@ class FeedTableViewController: UITableViewController {
         try! Auth.auth().signOut()
     }
     
-    // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {
         return 1

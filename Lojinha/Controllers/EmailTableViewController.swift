@@ -31,7 +31,7 @@ class EmailTableViewController: UITableViewController {
         userNameTextField.delegate = self
         passwordTextField.delegate = self
     }
-    
+   
     @IBAction func didTapBack(){
       dismiss(animated: true, completion: nil)
     }
@@ -43,6 +43,8 @@ class EmailTableViewController: UITableViewController {
             && (userNameTextField.text?.count)! > 6
             && fullNameTextField.text != ""
             && profileImage != nil{
+            
+            self.showDialog()
             
             let email = emailTextField.text!
             let password = passwordTextField.text!
@@ -57,20 +59,21 @@ class EmailTableViewController: UITableViewController {
                     let newUser = User(uid: firuser.uid, email:email, userName: username, fullName: fullname, profileImage: self.profileImage)
                     newUser.save(completion: { (error) in
                         if error != nil{
-                            
+                            self.dismissDialog()
+                             self.showAlert(title: "Opps...", message: "Houve um erro para se cadastrar. Por favor tente novamente.")
                         }else{
-                            Auth.auth().signIn(withEmail: email, password: password, completion: { (firuser, error) in
-                                if error != nil{
-                                    
-                                }else{
-                                    self.dismiss(animated: true, completion: nil)
+                            firuser.sendEmailVerification(completion: { (error) in
+                                if error == nil{
+                                    self.dismissDialog()
+                                    self.showAlert(title: "Lojinha", message: "Parabéns! Você foi cadastrado com sucesso.\n Verifique seu email para confirmar seu login.")
                                 }
                             })
-                            
                         }
                     })
                 }
             })
+        }else{
+             self.showAlert(title: "Opps...", message: "Houve um erro para se cadastrar. Por favor tente novamente.")
         }
     }
     
@@ -81,6 +84,36 @@ class EmailTableViewController: UITableViewController {
             self.profileImage = image
         })
     }
+}
+
+extension EmailTableViewController{
+    
+    func showAlert(title:String, message:String){
+        let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        
+        let action = UIAlertAction(title: "OK", style: .default, handler: nil)
+        
+        alert.addAction(action)
+        present(alert,animated: true, completion: nil)
+    }
+    
+    
+    func showDialog(){
+        let alert = UIAlertController(title: nil, message: "Carregando...", preferredStyle: .alert)
+        
+        let loadingIndicator = UIActivityIndicatorView(frame: CGRect(x: 10, y: 5, width: 50, height: 50))
+        loadingIndicator.hidesWhenStopped = true
+        loadingIndicator.activityIndicatorViewStyle = UIActivityIndicatorViewStyle.gray
+        loadingIndicator.startAnimating();
+        
+        alert.view.addSubview(loadingIndicator)
+        present(alert, animated: true, completion: nil)
+    }
+    
+    func dismissDialog(){
+        dismiss(animated: false, completion: nil)
+    }
+    
 }
 
 extension EmailTableViewController: UITextFieldDelegate{
@@ -94,10 +127,9 @@ extension EmailTableViewController: UITextFieldDelegate{
             passwordTextField.becomeFirstResponder()
         }else if textField == passwordTextField{
             passwordTextField.resignFirstResponder()
-            //createNewAccountDidTap()
+            didTapCreateNewUser()
         }
         
         return true
     }
-    
 }
