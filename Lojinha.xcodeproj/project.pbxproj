@@ -136,12 +136,22 @@
 				F40867EA1F283B6F00C91A55 /* Info.plist */,
 				F406E7C11FF478A0006C05CC /* GoogleService-Info.plist */,
 				F43065F71FE207B000FCD895 /* Storyboards */,
+				F421B4FD20200B9F00D5FF11 /* Firebase */,
 				F43065F61FE2078F00FCD895 /* Model */,
 				F43065F81FE207E300FCD895 /* Views */,
 				F427440F1FF5C09400A28250 /* Helper Classes */,
 				F43065F91FE207EB00FCD895 /* Controllers */,
 			);
 			path = Lojinha;
+			sourceTree = "<group>";
+		};
+		F421B4FD20200B9F00D5FF11 /* Firebase */ = {
+			isa = PBXGroup;
+			children = (
+				F42744141FFDAE2800A28250 /* FirebaseReference.swift */,
+				F42744161FFDB04300A28250 /* FIRImage.swift */,
+			);
+			path = Firebase;
 			sourceTree = "<group>";
 		};
 		F427440F1FF5C09400A28250 /* Helper Classes */ = {
@@ -159,8 +169,6 @@
 			children = (
 				F42744181FFDB2FC00A28250 /* User.swift */,
 				F4072CAF1FA7FDF800768005 /* Product.swift */,
-				F42744141FFDAE2800A28250 /* FirebaseReference.swift */,
-				F42744161FFDB04300A28250 /* FIRImage.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
