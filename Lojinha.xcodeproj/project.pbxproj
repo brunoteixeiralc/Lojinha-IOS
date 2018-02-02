@@ -36,6 +36,8 @@
 		F43065FD1FE4894D00FCD895 /* ProductImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F43065FC1FE4894D00FCD895 /* ProductImageViewController.swift */; };
 		F43065FF1FE48A0200FCD895 /* ProductImagesPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F43065FE1FE48A0200FCD895 /* ProductImagesPageViewController.swift */; };
 		F43066011FE4A3C700FCD895 /* ProductImagesHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F43066001FE4A3C700FCD895 /* ProductImagesHeaderView.swift */; };
+		F44A9A772023E3440065CE18 /* SMSCodeTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F44A9A762023E3440065CE18 /* SMSCodeTableViewController.swift */; };
+		F44A9A7A2023F49E0065CE18 /* SMSRegisterTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F44A9A792023F49E0065CE18 /* SMSRegisterTableViewController.swift */; };
 		F45A537D2020F375000B63E2 /* SMSTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F45A537C2020F375000B63E2 /* SMSTableViewController.swift */; };
 		F47B5CEB1FE88B2700ECC432 /* SuggestionCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F47B5CEA1FE88B2700ECC432 /* SuggestionCollectionViewCell.swift */; };
 		F47B5CED1FE88BC600ECC432 /* SuggestionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F47B5CEC1FE88BC600ECC432 /* SuggestionTableViewCell.swift */; };
@@ -75,6 +77,9 @@
 		F43065FC1FE4894D00FCD895 /* ProductImageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductImageViewController.swift; sourceTree = "<group>"; };
 		F43065FE1FE48A0200FCD895 /* ProductImagesPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductImagesPageViewController.swift; sourceTree = "<group>"; };
 		F43066001FE4A3C700FCD895 /* ProductImagesHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductImagesHeaderView.swift; sourceTree = "<group>"; };
+		F44A9A762023E3440065CE18 /* SMSCodeTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SMSCodeTableViewController.swift; sourceTree = "<group>"; };
+		F44A9A782023E5040065CE18 /* Lojinha.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Lojinha.entitlements; sourceTree = "<group>"; };
+		F44A9A792023F49E0065CE18 /* SMSRegisterTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SMSRegisterTableViewController.swift; sourceTree = "<group>"; };
 		F45A537C2020F375000B63E2 /* SMSTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SMSTableViewController.swift; sourceTree = "<group>"; };
 		F47B5CEA1FE88B2700ECC432 /* SuggestionCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuggestionCollectionViewCell.swift; sourceTree = "<group>"; };
 		F47B5CEC1FE88BC600ECC432 /* SuggestionTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuggestionTableViewCell.swift; sourceTree = "<group>"; };
@@ -131,6 +136,7 @@
 		F40867DD1F283B6F00C91A55 /* Lojinha */ = {
 			isa = PBXGroup;
 			children = (
+				F44A9A782023E5040065CE18 /* Lojinha.entitlements */,
 				F40867DE1F283B6F00C91A55 /* AppDelegate.swift */,
 				F40867E51F283B6F00C91A55 /* Assets.xcassets */,
 				F40867EA1F283B6F00C91A55 /* Info.plist */,
@@ -204,10 +210,10 @@
 				F406E7B61FEB26DC006C05CC /* ShoppingBagTableViewController.swift */,
 				F406E7BD1FEB3E03006C05CC /* CheckoutTableViewController.swift */,
 				F427440B1FF5B9AC00A28250 /* RegisterTypeViewController.swift */,
-				F427440D1FF5BA7A00A28250 /* EmailTableViewController.swift */,
+				F44A9A7C2023FAB10065CE18 /* Email-Auth */,
 				F42744121FF5CA4D00A28250 /* LoginTableViewController.swift */,
 				F427441A1FFDBDB100A28250 /* WelcomeViewController.swift */,
-				F45A537C2020F375000B63E2 /* SMSTableViewController.swift */,
+				F44A9A7B2023FA830065CE18 /* SMS-Auth */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -220,6 +226,24 @@
 				F43066001FE4A3C700FCD895 /* ProductImagesHeaderView.swift */,
 			);
 			path = SliderProductImage;
+			sourceTree = "<group>";
+		};
+		F44A9A7B2023FA830065CE18 /* SMS-Auth */ = {
+			isa = PBXGroup;
+			children = (
+				F45A537C2020F375000B63E2 /* SMSTableViewController.swift */,
+				F44A9A762023E3440065CE18 /* SMSCodeTableViewController.swift */,
+				F44A9A792023F49E0065CE18 /* SMSRegisterTableViewController.swift */,
+			);
+			path = "SMS-Auth";
+			sourceTree = "<group>";
+		};
+		F44A9A7C2023FAB10065CE18 /* Email-Auth */ = {
+			isa = PBXGroup;
+			children = (
+				F427440D1FF5BA7A00A28250 /* EmailTableViewController.swift */,
+			);
+			path = "Email-Auth";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -258,6 +282,14 @@
 						CreatedOnToolsVersion = 8.3.3;
 						DevelopmentTeam = 8UW672R5KC;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.BackgroundModes = {
+								enabled = 1;
+							};
+							com.apple.Push = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -301,6 +333,7 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-Lojinha/Pods-Lojinha-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/GTMOAuth2/GTMOAuth2.framework",
 				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
 				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
@@ -308,6 +341,7 @@
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMOAuth2.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
@@ -342,9 +376,12 @@
 			files = (
 			);
 			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-Lojinha/Pods-Lojinha-resources.sh",
+				"${PODS_ROOT}/GoogleSignIn/Resources/GoogleSignIn.bundle",
 			);
 			name = "[CP] Copy Pods Resources";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -381,7 +418,9 @@
 				F42744151FFDAE2800A28250 /* FirebaseReference.swift in Sources */,
 				F406E7BB1FEB27FC006C05CC /* ShoppingCartItemCell.swift in Sources */,
 				F43065F41FE2071600FCD895 /* BuyButtonCell.swift in Sources */,
+				F44A9A7A2023F49E0065CE18 /* SMSRegisterTableViewController.swift in Sources */,
 				F42744191FFDB2FD00A28250 /* User.swift in Sources */,
+				F44A9A772023E3440065CE18 /* SMSCodeTableViewController.swift in Sources */,
 				F4072CB21FA8023300768005 /* FeedTableViewController.swift in Sources */,
 				F47B5CED1FE88BC600ECC432 /* SuggestionTableViewCell.swift in Sources */,
 				F42744131FF5CA4D00A28250 /* LoginTableViewController.swift in Sources */,
@@ -514,6 +553,7 @@
 			baseConfigurationReference = E2CD9BE99CE5C8C4277B2A14 /* Pods-Lojinha.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = Lojinha/Lojinha.entitlements;
 				DEVELOPMENT_TEAM = 8UW672R5KC;
 				INFOPLIST_FILE = Lojinha/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -529,6 +569,7 @@
 			baseConfigurationReference = B100EC11426409C808CED369 /* Pods-Lojinha.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = Lojinha/Lojinha.entitlements;
 				DEVELOPMENT_TEAM = 8UW672R5KC;
 				INFOPLIST_FILE = Lojinha/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";

@@ -28,7 +28,7 @@ class LoginTableViewController: UITableViewController {
             
             Auth.auth().signIn(withEmail: email!, password: password!, completion: { (firUser, error) in
                 if let error = error{
-                    fatalFirebaseError(error)
+                    //fatalFirebaseError(error)
                 }else{
                     self.dismiss(animated: true, completion: nil)
                 }
