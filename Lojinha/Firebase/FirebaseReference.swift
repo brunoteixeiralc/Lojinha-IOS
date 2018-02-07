@@ -12,6 +12,7 @@ enum DatabaseRef {
     
     case root
     case user(uid:String)
+    case products(uid:String)
     
     func ref() -> DatabaseReference {
         return rootRef.child(path)
@@ -28,6 +29,8 @@ enum DatabaseRef {
             return ""
         case .user(let uid):
             return "users/\(uid)"
+        case .products(let uid):
+            return "products/\(uid)"
             
         }
     }
@@ -37,6 +40,7 @@ enum StorageRef {
     
     case root
     case profileImages
+    case images
     
     func ref() -> StorageReference {
         return baseRef.child(path)
@@ -53,7 +57,8 @@ enum StorageRef {
             return ""
         case .profileImages:
             return "profileImages"
-            
+        case .images:
+            return "images"
         }
     }
 }

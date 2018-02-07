@@ -34,6 +34,19 @@ extension FIRImage{
             completion(error)
         }
     }
+    
+    func save(uid:String, completion:@escaping (Error?) -> Void){
+        
+        let resized = image.resize()
+        let imageData =  UIImageJPEGRepresentation(resized, 0.9)
+        
+        ref = StorageRef.images.ref().child(uid)
+        downloadLink = ref.description
+        
+        ref.putData(imageData!, metadata: nil) { (metadData, error) in
+            completion(error)
+        }
+    }
 }
 
 extension FIRImage{
@@ -41,6 +54,18 @@ extension FIRImage{
     class func downloadProfileImage(uid:String,completion:@escaping (UIImage?,Error?) -> Void){
         
         StorageRef.profileImages.ref().child(uid).getData(maxSize: 1*1024*1024) {(imageData, error) in
+            if error == nil && imageData != nil{
+                let image = UIImage(data: imageData!)
+                completion(image,error)
+            }else{
+                completion(nil,error)
+            }
+        }
+    }
+    
+    class func downloadImage(uid:String,completion:@escaping (UIImage?,Error?) -> Void){
+        
+        StorageRef.images.ref().child(uid).getData(maxSize: 1*1024*1024) {(imageData, error) in
             if error == nil && imageData != nil{
                 let image = UIImage(data: imageData!)
                 completion(image,error)

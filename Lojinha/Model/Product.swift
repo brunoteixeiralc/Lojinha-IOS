@@ -4,20 +4,26 @@
 //
 //  Created by Bruno Corrêa on 30/10/2017.
 //
+//(1) clientes - procurar produtos, fazer compras, historico de compras , cancelar alguma compra
+//(2) admin - upload, editar produtos, gerenciar compras
 
 import UIKit
+import Firebase
 
 class Product{
     
-    var uid:String
-    var name:String
+    var uid:String?
+    var name:String?
     var image: [UIImage]?
     var price: Double?
     var description: String?
     var detail:String?
     var relatedProductsUIDs: [String]?
     
-    init(uid:String,name:String,image: [UIImage]?, price:Double?, description:String?, detail:String?, relatedProductsUIDs:[String]? = ["875942-100","880843-003","384664-113","805144-852"]){
+    var imageLinks: [String]?
+    var featuredImageLink: String?
+    
+    init(uid:String?,name:String?,image: [UIImage]?, price:Double?, description:String?, detail:String?, relatedProductsUIDs:[String]? = ["875942-100","880843-003","384664-113","805144-852"]){
         
         self.uid = uid
         self.name = name
@@ -28,6 +34,7 @@ class Product{
         self.relatedProductsUIDs = relatedProductsUIDs
     }
     
+    //para MVP , protótipo, popular na mão.
     class func fetchProducts() -> [Product]{
         
         var shoes = [Product]()
@@ -68,5 +75,83 @@ class Product{
         return shoes
 
     }
+}
+
+extension Product{
     
+    var ref: DatabaseReference!{
+        get {
+            if let uid = self.uid{
+                return DatabaseRef.products(uid: uid).ref()
+            }else{
+                return nil
+            }
+        }
+    }
+    
+    convenience init(dictionary:[String:Any]){
+        let uid = dictionary["uid"] as? String
+        let name = dictionary["name"] as? String
+        let price = dictionary["price"] as? Double
+        let description = dictionary["description"] as? String
+        let detail = dictionary["detail"] as? String
+        let relatedProductsUIDs = dictionary["relatedProductsUIDs"] as? [String]
+        
+        var imgLinks = [String]()
+        if let imgLinkDict = dictionary["images"] as? [String:Any]{
+            for(_,imgLink) in imgLinkDict{
+                imgLinks.append(imgLink as! String)
+            }
+        }
+        
+        self.init(uid: uid, name: name, image: nil, price: price, description: description, detail: detail, relatedProductsUIDs: relatedProductsUIDs)
+        self.imageLinks = imgLinks
+        self.featuredImageLink = imgLinks[0]
+    }
+    
+    class func fetchProducts(completion: @escaping ([Product]) -> Void){
+        Database.database().reference().child("products").observeSingleEvent(of: .value, with: { snapshot in
+            var products = [Product]()
+            
+            for childSnapshot in snapshot.children{
+                if let childSnapshot = childSnapshot as? DataSnapshot, let dictionary = childSnapshot.value as? [String:Any]{
+                    let product = Product(dictionary: dictionary)
+                    products.append(product)
+                }
+            }
+            completion(products)
+        })
+    }
+    
+    func save(completion: @escaping (Error?) -> Void){
+        if let images = image{
+            for image in images{
+                let firImage = FIRImage(image: image)
+                let randomID = ref.childByAutoId().key
+                firImage.save(uid: randomID, completion: { (error) in
+                    self.ref.child("images").childByAutoId().setValue(firImage.downloadLink!)
+                    completion(error)
+                })
+            }
+        }
+        
+        self.ref.setValue(toDictionary())
+    }
+    
+    func toDictionary() -> [String:Any]{
+        guard let uid = self.uid, let name = self.name, let price = price, let description = description, let detail = detail, let relatedProductsUIDs = relatedProductsUIDs
+        else{
+            return [:]
+        }
+        
+        return [
+            "uid":uid,
+            "name":name,
+            "price": price,
+            "description": description,
+            "detail":detail,
+            "relatedProductUIDs":relatedProductsUIDs
+            //"featuredImageLinks":imageLinks![0]
+        ]
+    }
 }
