@@ -47,7 +47,7 @@ class FeedTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        navigationItem.title = "Lista de produtos"
+        navigationItem.title = "Produtos"
         fetchProducts()
         
         tableView.estimatedRowHeight = tableView.rowHeight
@@ -55,9 +55,10 @@ class FeedTableViewController: UITableViewController {
     }
 
     func fetchProducts(){
-        products = Product.fetchProducts()
-        tableView.reloadData()
-        
+        Product.fetchProducts { (products) in
+            self.products = products
+            self.tableView.reloadData()
+        }
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

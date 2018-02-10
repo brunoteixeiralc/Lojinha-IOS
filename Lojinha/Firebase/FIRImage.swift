@@ -63,6 +63,18 @@ extension FIRImage{
         }
     }
     
+    class func downloadImage(uri: String, completion: @escaping (UIImage?, Error?) -> Void)
+    {
+        Storage.storage().reference(forURL: uri).getData(maxSize: 1 * 1024 * 1024) { (imageData, error) in
+            if error == nil && imageData != nil {
+                let image = UIImage(data: imageData!)
+                completion(image, error)
+            } else {
+                completion(nil, error)
+            }
+        }
+    }
+    
     class func downloadImage(uid:String,completion:@escaping (UIImage?,Error?) -> Void){
         
         StorageRef.images.ref().child(uid).getData(maxSize: 1*1024*1024) {(imageData, error) in

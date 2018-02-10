@@ -34,7 +34,7 @@ class ProductDetailTVC: UITableViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == Storyboard.showImagesPageViewController{
             if let imagesPageVC = segue.destination as? ProductImagesPageViewController{
-                imagesPageVC.images = product.image
+                imagesPageVC.product = product
                 imagesPageVC.pageViewControllerDelegate = productImagesHeaderView
             }
         }

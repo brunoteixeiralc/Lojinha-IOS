@@ -11,14 +11,15 @@ class ProductImageViewController: UIViewController {
 
     @IBOutlet weak var imageView:UIImageView!
     
-    var image:UIImage?{
+    var imageLink: String?{
         didSet{
-            self.imageView?.image = image
+            if let imageLink = imageLink{
+                FIRImage.downloadImage(uri: imageLink, completion: { (image, error) in
+                    if error == nil && image != nil{
+                        self.imageView.image = image
+                    }
+                })
+            }
         }
-    }
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        self.imageView.image = image
     }
 }

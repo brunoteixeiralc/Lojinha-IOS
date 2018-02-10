@@ -14,21 +14,21 @@ protocol ProductImagesPageViewControllerDelegate:class {
 
 class ProductImagesPageViewController: UIPageViewController {
 
-    var images: [UIImage]? = Product.fetchProducts().first?.image
+    var product:Product!
     weak var pageViewControllerDelegate:ProductImagesPageViewControllerDelegate?
     
     struct Storyboard {
-        static let shoeImageViewController = "ShoeImageViewController"
+        static let productImageViewController = "ProductImageViewController"
     }
     
     lazy var controllers: [UIViewController] = {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         var controllers = [UIViewController]()
         
-        if let images = self.images{
-            for image in images{
-                let shoeImageVC = storyboard.instantiateViewController(withIdentifier: Storyboard.shoeImageViewController)
-                controllers.append(shoeImageVC)
+        if let imageLinks = self.product.imageLinks{
+            for imageLink in imageLinks{
+                let productImageVC = storyboard.instantiateViewController(withIdentifier: Storyboard.productImageViewController)
+                controllers.append(productImageVC)
             }
         }
         
@@ -65,8 +65,8 @@ class ProductImagesPageViewController: UIPageViewController {
     func configureDisplay(viewController: UIViewController){
         for (index, vc) in controllers.enumerated(){
             if viewController === vc{
-                if let showImageVC = viewController as? ProductImageViewController {
-                    showImageVC.image = self.images?[index]
+                if let productImageVC = viewController as? ProductImageViewController {
+                    productImageVC.imageLink = self.product.imageLinks?[index]
                     
                     self.pageViewControllerDelegate?.turnPageController(to: index)
                 }

@@ -16,16 +16,24 @@ class FeedProductCell: UITableViewCell {
     @IBOutlet weak var productPriceLabel: UILabel!
     
     var product: Product?{
-        didSet{
+        didSet{
             updateUI()
         }
     }
 
     func updateUI(){
         if let product = product{
-            productImage.image = product.image?.first
+            
+            productImage.image = nil
+            if let imageLinks = product.imageLinks, let imageLink = imageLinks.first{
+                FIRImage.downloadImage(uri: imageLink, completion: { (image, error) in
+                    if error == nil{
+                        self.productImage.image = image
+                    }
+                })
+            }
             productNameLabel.text = product.name
-            productPriceLabel.text = "\(String(describing: product.price!))"
+            productPriceLabel.text = "R$ \(String(describing: product.price!))"
         }
 
     }
