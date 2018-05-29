@@ -15,7 +15,7 @@ class WelcomeViewController: UIViewController {
         
         Auth.auth().addStateDidChangeListener({ (auth, user) in
             if user != nil{
-                //self.dismiss(animated: false, completion: nil)
+                self.dismiss(animated: false, completion: nil)
             }else{
                 
             }

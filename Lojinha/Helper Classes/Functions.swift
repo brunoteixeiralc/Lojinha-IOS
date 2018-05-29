@@ -5,10 +5,8 @@
 //  Created by Bruno Lemgruber on 26/12/2017.
 //  Copyright © 2017 Bruno Lemgruber. All rights reserved.
 //
-
-//https://stackoverflow.com/questions/32364055/formattting-phone-number-in-swift
-
 import Foundation
+import UIKit
 
 let FirebaseFailedNotification = Notification.Name("FirebaseFailedNotification")
 
@@ -17,6 +15,35 @@ func fatalFirebaseError(_ error: Error){
     NotificationCenter.default.post(name: FirebaseFailedNotification, object: nil)
 }
 
+// MARK: Dialogs and Alert
+
+func showAlert(view:UIViewController, title:String, message:String){
+    let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
+    
+    let action = UIAlertAction(title: "OK", style: .default, handler: nil)
+    
+    alert.addAction(action)
+    view.present(alert,animated: true, completion: nil)
+}
+
+func showDialog(view:UIViewController, title:String){
+    let alert = UIAlertController(title: nil, message: title, preferredStyle: .alert)
+    
+    let loadingIndicator = UIActivityIndicatorView(frame: CGRect(x: 10, y: 5, width: 50, height: 50))
+    loadingIndicator.hidesWhenStopped = true
+    loadingIndicator.activityIndicatorViewStyle = UIActivityIndicatorViewStyle.gray
+    loadingIndicator.startAnimating();
+    
+    alert.view.addSubview(loadingIndicator)
+    view.present(alert, animated: true, completion: nil)
+}
+
+func dismissDialog(view:UIViewController){
+    view.dismiss(animated: false, completion: nil)
+}
+
+// MARK: Format Number
+//https://stackoverflow.com/questions/32364055/formattting-phone-number-in-swift
 func format(phoneNumber sourcePhoneNumber: String) -> String? {
     // Remove any character that is not a number
     let numbersOnly = sourcePhoneNumber.components(separatedBy: CharacterSet.decimalDigits.inverted).joined()

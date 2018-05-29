@@ -29,6 +29,7 @@ class LoginTableViewController: UITableViewController {
             Auth.auth().signIn(withEmail: email!, password: password!, completion: { (firUser, error) in
                 if let error = error{
                     //fatalFirebaseError(error)
+                    showAlert(view: self, title: "Lojinha", message: error.localizedDescription)
                 }else{
                     self.dismiss(animated: true, completion: nil)
                 }
