@@ -36,8 +36,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate{
         FBSDKApplicationDelegate.sharedInstance().application(application,
                                                               didFinishLaunchingWithOptions:launchOptions)
         
-        TWTRTwitter.sharedInstance().start(withConsumerKey:"j4HyDyHklXhnllwKaAeVZRrSA", consumerSecret:"V3O2YU0kC1uH3ruhZEr5uJeoNSMqaQr1bG8JJa7elp9BiU6Ooy")
-        
+        let key = Bundle.main.object(forInfoDictionaryKey: "consumerKey"),
+        secret = Bundle.main.object(forInfoDictionaryKey: "consumerSecret")
+        if let key = key as? String, let secret = secret as? String, !key.isEmpty && !secret.isEmpty {
+            TWTRTwitter.sharedInstance().start(withConsumerKey: key, consumerSecret: secret)
+        }
         configureAppearence()
         
 //        Salvar os produtos
