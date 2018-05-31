@@ -42,6 +42,41 @@ func dismissDialog(view:UIViewController){
     view.dismiss(animated: false, completion: nil)
 }
 
+func showInputDialog(view:UIViewController) {
+    //Creating UIAlertController and
+    //Setting title and message for the alert dialog
+    let alertController = UIAlertController(title: "Enter details?", message: "Enter your name and email", preferredStyle: .alert)
+    
+    //the confirm action taking the inputs
+    let confirmAction = UIAlertAction(title: "Enter", style: .default) { (_) in
+        
+        //getting the input values from user
+        let name = alertController.textFields?[0].text
+        let email = alertController.textFields?[1].text
+        
+       // view.labelMessage.text = "Name: " + name! + "Email: " + email!
+        
+    }
+    
+    //the cancel action doing nothing
+    let cancelAction = UIAlertAction(title: "Cancel", style: .cancel) { (_) in }
+    
+    //adding textfields to our dialog box
+    alertController.addTextField { (textField) in
+        textField.placeholder = "Enter Name"
+    }
+    alertController.addTextField { (textField) in
+        textField.placeholder = "Enter Email"
+    }
+    
+    //adding the action to dialogbox
+    alertController.addAction(confirmAction)
+    alertController.addAction(cancelAction)
+    
+    //finally presenting the dialog box
+    view.present(alertController, animated: true, completion: nil)
+}
+
 // MARK: Format Number
 //https://stackoverflow.com/questions/32364055/formattting-phone-number-in-swift
 

@@ -41,6 +41,7 @@
 		F45A537D2020F375000B63E2 /* SMSTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F45A537C2020F375000B63E2 /* SMSTableViewController.swift */; };
 		F47B5CEB1FE88B2700ECC432 /* SuggestionCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F47B5CEA1FE88B2700ECC432 /* SuggestionCollectionViewCell.swift */; };
 		F47B5CED1FE88BC600ECC432 /* SuggestionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F47B5CEC1FE88BC600ECC432 /* SuggestionTableViewCell.swift */; };
+		F491467C20BF98CF00585994 /* UIViewController+Alerts.m in Sources */ = {isa = PBXBuildFile; fileRef = F491467B20BF98CF00585994 /* UIViewController+Alerts.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -83,6 +84,9 @@
 		F45A537C2020F375000B63E2 /* SMSTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SMSTableViewController.swift; sourceTree = "<group>"; };
 		F47B5CEA1FE88B2700ECC432 /* SuggestionCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuggestionCollectionViewCell.swift; sourceTree = "<group>"; };
 		F47B5CEC1FE88BC600ECC432 /* SuggestionTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuggestionTableViewCell.swift; sourceTree = "<group>"; };
+		F491467920BF98CE00585994 /* Lojinha-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Lojinha-Bridging-Header.h"; sourceTree = "<group>"; };
+		F491467A20BF98CF00585994 /* UIViewController+Alerts.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+Alerts.h"; sourceTree = "<group>"; };
+		F491467B20BF98CF00585994 /* UIViewController+Alerts.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+Alerts.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -164,6 +168,9 @@
 			isa = PBXGroup;
 			children = (
 				F43066021FE4B27700FCD895 /* SliderProductImage */,
+				F491467A20BF98CF00585994 /* UIViewController+Alerts.h */,
+				F491467B20BF98CF00585994 /* UIViewController+Alerts.m */,
+				F491467920BF98CE00585994 /* Lojinha-Bridging-Header.h */,
 				F42744101FF5C0EE00A28250 /* ImagePickerHelper.swift */,
 				F427441C1FFDC05D00A28250 /* Functions.swift */,
 			);
@@ -281,6 +288,7 @@
 					F40867DA1F283B6F00C91A55 = {
 						CreatedOnToolsVersion = 8.3.3;
 						DevelopmentTeam = 8UW672R5KC;
+						LastSwiftMigration = 0930;
 						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
 							com.apple.BackgroundModes = {
@@ -430,6 +438,7 @@
 				F43065FB1FE208B000FCD895 /* ProductDetailTVC.swift in Sources */,
 				F406E7BE1FEB3E03006C05CC /* CheckoutTableViewController.swift in Sources */,
 				F42744151FFDAE2800A28250 /* FirebaseReference.swift in Sources */,
+				F491467C20BF98CF00585994 /* UIViewController+Alerts.m in Sources */,
 				F406E7BB1FEB27FC006C05CC /* ShoppingCartItemCell.swift in Sources */,
 				F43065F41FE2071600FCD895 /* BuyButtonCell.swift in Sources */,
 				F44A9A7A2023F49E0065CE18 /* SMSRegisterTableViewController.swift in Sources */,
@@ -567,12 +576,15 @@
 			baseConfigurationReference = E2CD9BE99CE5C8C4277B2A14 /* Pods-Lojinha.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = Lojinha/Lojinha.entitlements;
 				DEVELOPMENT_TEAM = 8UW672R5KC;
 				INFOPLIST_FILE = Lojinha/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = br.com.Lojinha;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Lojinha/Helper Classes/Lojinha-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
@@ -583,12 +595,14 @@
 			baseConfigurationReference = B100EC11426409C808CED369 /* Pods-Lojinha.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = Lojinha/Lojinha.entitlements;
 				DEVELOPMENT_TEAM = 8UW672R5KC;
 				INFOPLIST_FILE = Lojinha/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = br.com.Lojinha;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Lojinha/Helper Classes/Lojinha-Bridging-Header.h";
 				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};

@@ -27,7 +27,9 @@ class SMSTableViewController: UITableViewController {
     
     @IBAction func sendSMS(){
         if let phone = telephoneNumber.text{
+            showDialog(view: self, title: "Enviando SMS...")
             PhoneAuthProvider.provider().verifyPhoneNumber(phone, uiDelegate: nil, completion: { (verificationID, error) in
+                dismissDialog(view: self)
                 if let error = error{
                     showAlert(view: self, title: "Lojinha", message: error.localizedDescription)
                     return

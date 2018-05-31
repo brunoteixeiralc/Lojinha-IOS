@@ -39,7 +39,7 @@ class SMSCodeTableViewController: UITableViewController {
 extension SMSCodeTableViewController: UITextFieldDelegate{
     
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
-        if(textField.text?.count == 6){
+        if(textField.text?.count == 5){
             send.isEnabled = true
         }else{
             send.isEnabled = false
