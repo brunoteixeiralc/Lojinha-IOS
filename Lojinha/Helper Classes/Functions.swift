@@ -44,6 +44,7 @@ func dismissDialog(view:UIViewController){
 
 // MARK: Format Number
 //https://stackoverflow.com/questions/32364055/formattting-phone-number-in-swift
+
 func format(phoneNumber sourcePhoneNumber: String) -> String? {
     // Remove any character that is not a number
     let numbersOnly = sourcePhoneNumber.components(separatedBy: CharacterSet.decimalDigits.inverted).joined()

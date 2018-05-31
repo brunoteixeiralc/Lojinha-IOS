@@ -29,7 +29,7 @@ class SMSTableViewController: UITableViewController {
         if let phone = telephoneNumber.text{
             PhoneAuthProvider.provider().verifyPhoneNumber(phone, uiDelegate: nil, completion: { (verificationID, error) in
                 if let error = error{
-                    print(error)
+                    showAlert(view: self, title: "Lojinha", message: error.localizedDescription)
                     return
                 }
                 self.performSegue(withIdentifier: "showSMSCode", sender: nil)

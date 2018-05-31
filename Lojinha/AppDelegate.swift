@@ -9,6 +9,8 @@
 import UIKit
 import Firebase
 import GoogleSignIn
+import FBSDKCoreKit
+import TwitterKit
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate{
@@ -31,9 +33,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate{
         GIDSignIn.sharedInstance().clientID = FirebaseApp.app()?.options.clientID
         GIDSignIn.sharedInstance().delegate = self
         
+        FBSDKApplicationDelegate.sharedInstance().application(application,
+                                                              didFinishLaunchingWithOptions:launchOptions)
+        
+        TWTRTwitter.sharedInstance().start(withConsumerKey:"j4HyDyHklXhnllwKaAeVZRrSA", consumerSecret:"V3O2YU0kC1uH3ruhZEr5uJeoNSMqaQr1bG8JJa7elp9BiU6Ooy")
+        
         configureAppearence()
         
-        //Salvar os produtos
+//        Salvar os produtos
 //        let products = Product.fetchProducts()
 //        for product in products{
 //            product.save(completion: { (error) in
@@ -47,7 +54,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate{
         return true
     }
     
-    //SMS Auth
+    //MARK: SMS Auth
+    
     func application(_ application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: Data) {
         Auth.auth().setAPNSToken(deviceToken, type: AuthAPNSTokenType.sandbox)
     }
@@ -59,10 +67,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate{
         }
     }
     
-    //Google +
+    // MARK: Google +
+    
     @available(iOS 9.0, *)
     func application(_ application: UIApplication, open url: URL, options: [UIApplicationOpenURLOptionsKey : Any]) -> Bool {
-            return GIDSignIn.sharedInstance().handle(url,sourceApplication:options[UIApplicationOpenURLOptionsKey.sourceApplication] as? String,annotation: [:])
+          let googleAuthentication =  GIDSignIn.sharedInstance().handle(url,sourceApplication:options[UIApplicationOpenURLOptionsKey.sourceApplication] as? String,annotation: [:])
+        
+        let facebookAuthentication = FBSDKApplicationDelegate.sharedInstance().application(application, open: url, sourceApplication: options[UIApplicationOpenURLOptionsKey.sourceApplication] as! String, annotation: options[UIApplicationOpenURLOptionsKey.annotation])
+        
+         let twitterAuthentication = TWTRTwitter.sharedInstance().application(application, open: url, options: options)
+        
+        return googleAuthentication || facebookAuthentication || twitterAuthentication
     }
     
     func application(_ application: UIApplication, open url: URL, sourceApplication: String?, annotation: Any) -> Bool {
@@ -70,17 +85,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate{
     }
     
     func sign(_ signIn: GIDSignIn!, didSignInFor user: GIDGoogleUser!, withError error: Error?) {
+        
+        guard let controller = GIDSignIn.sharedInstance().uiDelegate as? RegisterTypeViewController else { return }
+        
         if let error = error {
-            print(error.localizedDescription)
+            showAlert(view: (self.window?.rootViewController)!, title: "Lojinha", message: error.localizedDescription)
             return
         }
         
         guard let authentication = user.authentication else { return }
         let credential = GoogleAuthProvider.credential(withIDToken: authentication.idToken,accessToken: authentication.accessToken)
-        let mainStoryboard = UIStoryboard(name: "Main", bundle: nil)
-        self.window?.rootViewController = mainStoryboard.instantiateViewController(withIdentifier: "RegisterTypeViewController")
-        let controller  = window!.rootViewController as! RegisterTypeViewController
-        controller.credentialGooglePlus = credential
+        controller.firebaseLogin(credential)
     }
     
     func sign(_ signIn: GIDSignIn!, didDisconnectWith user: GIDGoogleUser!, withError error: Error!) {
