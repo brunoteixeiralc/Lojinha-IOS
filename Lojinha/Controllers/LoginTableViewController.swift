@@ -34,6 +34,8 @@ class LoginTableViewController: UITableViewController {
                     self.dismiss(animated: true, completion: nil)
                 }
             })
+        }else{
+            showAlert(view: self, title: "Lojinha", message: "Por favor tente novamente.Verifique seu email e senha.")
         }
     }
     

@@ -42,6 +42,8 @@
 		F47B5CEB1FE88B2700ECC432 /* SuggestionCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F47B5CEA1FE88B2700ECC432 /* SuggestionCollectionViewCell.swift */; };
 		F47B5CED1FE88BC600ECC432 /* SuggestionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F47B5CEC1FE88BC600ECC432 /* SuggestionTableViewCell.swift */; };
 		F491467C20BF98CF00585994 /* UIViewController+Alerts.m in Sources */ = {isa = PBXBuildFile; fileRef = F491467B20BF98CF00585994 /* UIViewController+Alerts.m */; };
+		F492C46220D48DE60018DE55 /* Register.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F492C46120D48DE60018DE55 /* Register.storyboard */; };
+		F492C46420D490900018DE55 /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F492C46320D490900018DE55 /* Login.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -87,6 +89,8 @@
 		F491467920BF98CE00585994 /* Lojinha-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Lojinha-Bridging-Header.h"; sourceTree = "<group>"; };
 		F491467A20BF98CF00585994 /* UIViewController+Alerts.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+Alerts.h"; sourceTree = "<group>"; };
 		F491467B20BF98CF00585994 /* UIViewController+Alerts.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+Alerts.m"; sourceTree = "<group>"; };
+		F492C46120D48DE60018DE55 /* Register.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Register.storyboard; sourceTree = "<group>"; };
+		F492C46320D490900018DE55 /* Login.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -190,6 +194,8 @@
 			isa = PBXGroup;
 			children = (
 				F40867E21F283B6F00C91A55 /* Main.storyboard */,
+				F492C46120D48DE60018DE55 /* Register.storyboard */,
+				F492C46320D490900018DE55 /* Login.storyboard */,
 			);
 			path = Storyboards;
 			sourceTree = "<group>";
@@ -326,7 +332,9 @@
 			files = (
 				F40867F11F2843CD00C91A55 /* .gitignore in Resources */,
 				F406E7C21FF478A0006C05CC /* GoogleService-Info.plist in Resources */,
+				F492C46420D490900018DE55 /* Login.storyboard in Resources */,
 				F40867E61F283B6F00C91A55 /* Assets.xcassets in Resources */,
+				F492C46220D48DE60018DE55 /* Register.storyboard in Resources */,
 				F40867E41F283B6F00C91A55 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
