@@ -36,6 +36,7 @@
 		F43065FD1FE4894D00FCD895 /* ProductImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F43065FC1FE4894D00FCD895 /* ProductImageViewController.swift */; };
 		F43065FF1FE48A0200FCD895 /* ProductImagesPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F43065FE1FE48A0200FCD895 /* ProductImagesPageViewController.swift */; };
 		F43066011FE4A3C700FCD895 /* ProductImagesHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F43066001FE4A3C700FCD895 /* ProductImagesHeaderView.swift */; };
+		F442680820D9D1BD0045E6D4 /* ShoppingCart.swift in Sources */ = {isa = PBXBuildFile; fileRef = F442680720D9D1BD0045E6D4 /* ShoppingCart.swift */; };
 		F44A9A772023E3440065CE18 /* SMSCodeTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F44A9A762023E3440065CE18 /* SMSCodeTableViewController.swift */; };
 		F44A9A7A2023F49E0065CE18 /* SMSRegisterTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F44A9A792023F49E0065CE18 /* SMSRegisterTableViewController.swift */; };
 		F45A537D2020F375000B63E2 /* SMSTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F45A537C2020F375000B63E2 /* SMSTableViewController.swift */; };
@@ -80,6 +81,7 @@
 		F43065FC1FE4894D00FCD895 /* ProductImageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductImageViewController.swift; sourceTree = "<group>"; };
 		F43065FE1FE48A0200FCD895 /* ProductImagesPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductImagesPageViewController.swift; sourceTree = "<group>"; };
 		F43066001FE4A3C700FCD895 /* ProductImagesHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductImagesHeaderView.swift; sourceTree = "<group>"; };
+		F442680720D9D1BD0045E6D4 /* ShoppingCart.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShoppingCart.swift; sourceTree = "<group>"; };
 		F44A9A762023E3440065CE18 /* SMSCodeTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SMSCodeTableViewController.swift; sourceTree = "<group>"; };
 		F44A9A782023E5040065CE18 /* Lojinha.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Lojinha.entitlements; sourceTree = "<group>"; };
 		F44A9A792023F49E0065CE18 /* SMSRegisterTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SMSRegisterTableViewController.swift; sourceTree = "<group>"; };
@@ -186,6 +188,7 @@
 			children = (
 				F42744181FFDB2FC00A28250 /* User.swift */,
 				F4072CAF1FA7FDF800768005 /* Product.swift */,
+				F442680720D9D1BD0045E6D4 /* ShoppingCart.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -436,6 +439,7 @@
 				F40867DF1F283B6F00C91A55 /* AppDelegate.swift in Sources */,
 				F406E7B71FEB26DC006C05CC /* ShoppingBagTableViewController.swift in Sources */,
 				F43065FD1FE4894D00FCD895 /* ProductImageViewController.swift in Sources */,
+				F442680820D9D1BD0045E6D4 /* ShoppingCart.swift in Sources */,
 				F43066011FE4A3C700FCD895 /* ProductImagesHeaderView.swift in Sources */,
 				F4072CB01FA7FDF800768005 /* Product.swift in Sources */,
 				F4072CB41FA8060800768005 /* FeedProductCell.swift in Sources */,

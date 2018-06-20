@@ -23,7 +23,7 @@ class Product{
     var imageLinks: [String]?
     var featuredImageLink: String?
     
-    init(uid:String?,name:String?,image: [UIImage]?, price:Double?, description:String?, detail:String?, relatedProductsUIDs:[String]? = ["875942-100","880843-003","384664-113","805144-852"]){
+    init(uid:String?,name:String?,image: [UIImage]?, price:Double?, description:String?, detail:String?, relatedProductsUIDs:[String]? = []){
         
         self.uid = uid
         self.name = name
@@ -31,7 +31,7 @@ class Product{
         self.price = price
         self.description = description
         self.detail = detail
-        self.relatedProductsUIDs = relatedProductsUIDs
+        self.relatedProductsUIDs = ["875942-100","880843-003","384664-113","805144-852"]
     }
     
     //para MVP , protótipo, popular na mão.
@@ -106,7 +106,7 @@ extension Product{
         
         self.init(uid: uid, name: name, image: nil, price: price, description: description, detail: detail, relatedProductsUIDs: relatedProductsUIDs)
         self.imageLinks = imgLinks
-        self.featuredImageLink = imgLinks[0]
+        self.featuredImageLink = dictionary["featuredImageLink"] as? String
     }
     
     class func fetchProducts(completion: @escaping ([Product]) -> Void){
@@ -150,8 +150,8 @@ extension Product{
             "price": price,
             "description": description,
             "detail":detail,
-            "relatedProductUIDs":relatedProductsUIDs
-            //"featuredImageLinks":imageLinks![0]
+            "relatedProductUIDs":relatedProductsUIDs,
+            "featuredImageLinks":imageLinks?.first
         ]
     }
 }

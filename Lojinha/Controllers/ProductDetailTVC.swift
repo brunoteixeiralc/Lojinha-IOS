@@ -69,6 +69,7 @@ class ProductDetailTVC: UITableViewController {
             let cell = tableView.dequeueReusableCell(withIdentifier: Storyboard.buyButtomCell, for: indexPath) as! BuyButtonCell
             cell.product = product
             cell.selectionStyle = .none
+            cell.delegate = self
             return cell
             
         }else if indexPath.row == 2{
@@ -128,5 +129,11 @@ extension ProductDetailTVC: UICollectionViewDelegateFlowLayout{
         }
         
         return CGSize.zero
+    }
+}
+
+extension ProductDetailTVC: BuyButtonCellDelegate{
+    func addToCart(product: Product) {
+        ShoppingCart.add(product: product)
     }
 }

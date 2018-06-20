@@ -43,17 +43,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate{
         }
         configureAppearence()
         
-//        Salvar os produtos
-//        let products = Product.fetchProducts()
-//        for product in products{
-//            product.save(completion: { (error) in
-//            })
-//        }
-        
-        Product.fetchProducts { (products) in
-            print(products)
-        }
-        
         return true
     }
     
