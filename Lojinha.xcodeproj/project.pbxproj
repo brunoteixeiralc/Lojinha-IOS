@@ -37,6 +37,8 @@
 		F43065FF1FE48A0200FCD895 /* ProductImagesPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F43065FE1FE48A0200FCD895 /* ProductImagesPageViewController.swift */; };
 		F43066011FE4A3C700FCD895 /* ProductImagesHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F43066001FE4A3C700FCD895 /* ProductImagesHeaderView.swift */; };
 		F442680820D9D1BD0045E6D4 /* ShoppingCart.swift in Sources */ = {isa = PBXBuildFile; fileRef = F442680720D9D1BD0045E6D4 /* ShoppingCart.swift */; };
+		F442680B20D9F11B0045E6D4 /* CartTotalCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F442680920D9F11A0045E6D4 /* CartTotalCell.swift */; };
+		F442680C20D9F11B0045E6D4 /* CartSubtotalCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F442680A20D9F11A0045E6D4 /* CartSubtotalCell.swift */; };
 		F44A9A772023E3440065CE18 /* SMSCodeTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F44A9A762023E3440065CE18 /* SMSCodeTableViewController.swift */; };
 		F44A9A7A2023F49E0065CE18 /* SMSRegisterTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F44A9A792023F49E0065CE18 /* SMSRegisterTableViewController.swift */; };
 		F45A537D2020F375000B63E2 /* SMSTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F45A537C2020F375000B63E2 /* SMSTableViewController.swift */; };
@@ -82,6 +84,8 @@
 		F43065FE1FE48A0200FCD895 /* ProductImagesPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductImagesPageViewController.swift; sourceTree = "<group>"; };
 		F43066001FE4A3C700FCD895 /* ProductImagesHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductImagesHeaderView.swift; sourceTree = "<group>"; };
 		F442680720D9D1BD0045E6D4 /* ShoppingCart.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShoppingCart.swift; sourceTree = "<group>"; };
+		F442680920D9F11A0045E6D4 /* CartTotalCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CartTotalCell.swift; sourceTree = "<group>"; };
+		F442680A20D9F11A0045E6D4 /* CartSubtotalCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CartSubtotalCell.swift; sourceTree = "<group>"; };
 		F44A9A762023E3440065CE18 /* SMSCodeTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SMSCodeTableViewController.swift; sourceTree = "<group>"; };
 		F44A9A782023E5040065CE18 /* Lojinha.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Lojinha.entitlements; sourceTree = "<group>"; };
 		F44A9A792023F49E0065CE18 /* SMSRegisterTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SMSRegisterTableViewController.swift; sourceTree = "<group>"; };
@@ -208,6 +212,8 @@
 			children = (
 				F43065F11FE206CC00FCD895 /* ProductDetailCell.swift */,
 				F43065F31FE2071600FCD895 /* BuyButtonCell.swift */,
+				F442680A20D9F11A0045E6D4 /* CartSubtotalCell.swift */,
+				F442680920D9F11A0045E6D4 /* CartTotalCell.swift */,
 				F4072CB31FA8060800768005 /* FeedProductCell.swift */,
 				F47B5CEA1FE88B2700ECC432 /* SuggestionCollectionViewCell.swift */,
 				F47B5CEC1FE88BC600ECC432 /* SuggestionTableViewCell.swift */,
@@ -437,6 +443,7 @@
 				F427440C1FF5B9AC00A28250 /* RegisterTypeViewController.swift in Sources */,
 				F427441B1FFDBDB100A28250 /* WelcomeViewController.swift in Sources */,
 				F40867DF1F283B6F00C91A55 /* AppDelegate.swift in Sources */,
+				F442680C20D9F11B0045E6D4 /* CartSubtotalCell.swift in Sources */,
 				F406E7B71FEB26DC006C05CC /* ShoppingBagTableViewController.swift in Sources */,
 				F43065FD1FE4894D00FCD895 /* ProductImageViewController.swift in Sources */,
 				F442680820D9D1BD0045E6D4 /* ShoppingCart.swift in Sources */,
@@ -456,6 +463,7 @@
 				F44A9A7A2023F49E0065CE18 /* SMSRegisterTableViewController.swift in Sources */,
 				F42744191FFDB2FD00A28250 /* User.swift in Sources */,
 				F44A9A772023E3440065CE18 /* SMSCodeTableViewController.swift in Sources */,
+				F442680B20D9F11B0045E6D4 /* CartTotalCell.swift in Sources */,
 				F4072CB21FA8023300768005 /* FeedTableViewController.swift in Sources */,
 				F47B5CED1FE88BC600ECC432 /* SuggestionTableViewCell.swift in Sources */,
 				F42744131FF5CA4D00A28250 /* LoginTableViewController.swift in Sources */,

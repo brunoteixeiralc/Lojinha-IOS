@@ -10,6 +10,7 @@ import UIKit
 class ShoppingBagTableViewController: UITableViewController {
 
     var products: [Product]?
+    var shoppingCart = ShoppingCart()
     
     struct Storyboard {
         static let numberOfItemsCell = "numberOfItemsCell"
@@ -25,12 +26,20 @@ class ShoppingBagTableViewController: UITableViewController {
         tableView.estimatedRowHeight = tableView.rowHeight
         tableView.rowHeight = UITableViewAutomaticDimension
         
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(true)
         fetchProducts()
     }
     
-    func fetchProducts(){
-        products = Product.fetchProducts()
-        tableView.reloadData()
+    func fetchProducts()
+    {
+        self.products?.removeAll()
+        shoppingCart.fetch { [weak self] () in
+            self?.products = self?.shoppingCart.products
+            self?.tableView.reloadData()
+        }
     }
 }
 
@@ -63,12 +72,14 @@ extension ShoppingBagTableViewController {
             
         }else if indexPath.row == product.count + 1{
             
-            let cell = tableView.dequeueReusableCell(withIdentifier: Storyboard.cartDetailCell, for: indexPath)
+            let cell = tableView.dequeueReusableCell(withIdentifier: Storyboard.cartDetailCell, for: indexPath) as! CartSubtotalCell
+            cell.shoppingCart = shoppingCart
             return cell
             
         }else if indexPath.row == product.count + 2{
             
-            let cell = tableView.dequeueReusableCell(withIdentifier: Storyboard.totalCell, for: indexPath)
+            let cell = tableView.dequeueReusableCell(withIdentifier: Storyboard.totalCell, for: indexPath) as! CartTotalCell
+            cell.shoppingCart = shoppingCart
             return cell
             
         }else if indexPath.row == product.count + 3{

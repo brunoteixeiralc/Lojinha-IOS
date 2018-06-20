@@ -106,7 +106,7 @@ extension Product{
         
         self.init(uid: uid, name: name, image: nil, price: price, description: description, detail: detail, relatedProductsUIDs: relatedProductsUIDs)
         self.imageLinks = imgLinks
-        self.featuredImageLink = dictionary["featuredImageLink"] as? String
+        self.featuredImageLink = dictionary["featuredImageLinks"] as? String
     }
     
     class func fetchProducts(completion: @escaping ([Product]) -> Void){

@@ -579,7 +579,7 @@
                                     <outlet property="removeButton" destination="mCC-EG-mR5" id="vGe-TQ-epq"/>
                                 </connections>
                             </tableViewCell>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="cartDetailCell" rowHeight="124" id="rbU-mw-Zn3">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="cartDetailCell" rowHeight="124" id="rbU-mw-Zn3" customClass="CartSubtotalCell" customModule="Lojinha" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="243" width="414" height="124"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="rbU-mw-Zn3" id="lFr-1W-L8t">
@@ -658,8 +658,13 @@
                                     </constraints>
                                 </tableViewCellContentView>
                                 <inset key="separatorInset" minX="24" minY="0.0" maxX="24" maxY="0.0"/>
+                                <connections>
+                                    <outlet property="shippingCostLabel" destination="Cit-Af-ScT" id="FOZ-Db-1PE"/>
+                                    <outlet property="subtotalLabel" destination="dzR-Vx-Q50" id="kNg-4h-r4b"/>
+                                    <outlet property="taxAmountLabel" destination="lDg-Jv-YjS" id="w5H-a0-bIT"/>
+                                </connections>
                             </tableViewCell>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="totalCell" rowHeight="73" id="fZY-YD-PCv">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="totalCell" rowHeight="73" id="fZY-YD-PCv" customClass="CartTotalCell" customModule="Lojinha" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="367" width="414" height="73"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="fZY-YD-PCv" id="KEJ-6b-csX">
@@ -692,6 +697,9 @@
                                     </constraints>
                                 </tableViewCellContentView>
                                 <inset key="separatorInset" minX="24" minY="0.0" maxX="24" maxY="0.0"/>
+                                <connections>
+                                    <outlet property="totalAmountLabel" destination="lqB-7G-owD" id="25z-wa-lvp"/>
+                                </connections>
                             </tableViewCell>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="checkoutButtonCell" rowHeight="65" id="4VG-7h-NXb">
                                 <rect key="frame" x="0.0" y="440" width="414" height="65"/>
