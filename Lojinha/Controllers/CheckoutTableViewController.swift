@@ -17,51 +17,40 @@ class CheckoutTableViewController: UITableViewController {
         static let cartDetailCell = "cartDetailCell"
     }
     
+    @IBOutlet weak var emailTextField: UITextField!
+    @IBOutlet weak var cardNumberTextField: UITextField!
+    @IBOutlet weak var expirationDateTextField: UITextField!
+    @IBOutlet weak var securityTextField: UITextField!
+    
+    @IBOutlet weak var subTotalLabel: UILabel!
+    @IBOutlet weak var shippingCostLabel: UILabel!
+    @IBOutlet weak var taxLabel: UILabel!
+    @IBOutlet weak var totalLabel: UILabel!
+    
+    @IBOutlet weak var submitOrderButton: UIButton!
+    
+    var shoppingCart:ShoppingCart!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         tableView.estimatedRowHeight = tableView.rowHeight
         tableView.rowHeight = UITableViewAutomaticDimension
-    }
-}
-
-extension CheckoutTableViewController{
-    
-    override func numberOfSections(in tableView: UITableView) -> Int {
-        return 1
+        updateUI()
     }
     
-    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 5
-    }
-    
-    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        
-        if indexPath.row == 0{
-            
-            let cell = tableView.dequeueReusableCell(withIdentifier: Storyboard.billingTitleCell, for: indexPath)
-            return cell
-            
-        }else if indexPath.row == 1{
-            
-            let cell = tableView.dequeueReusableCell(withIdentifier: Storyboard.billingInfoCell, for: indexPath) as! CreditCardInformationCell
-            return cell
-            
-        }else if indexPath.row == 2{
-            
-            let cell = tableView.dequeueReusableCell(withIdentifier: Storyboard.cartDetailCell, for: indexPath)
-            return cell
-            
-        }else if indexPath.row == 3{
-            
-            let cell = tableView.dequeueReusableCell(withIdentifier: Storyboard.totalCell, for: indexPath)
-            return cell
-            
-        }else{
-            
-            let cell = tableView.dequeueReusableCell(withIdentifier: Storyboard.submitButtonCell, for: indexPath)
-            return cell
+    func updateUI(){
+        if shoppingCart != nil{
+            if let subtotal = shoppingCart.subtotal, let shipping = shoppingCart.shipping, let tax = shoppingCart.tax, let total = shoppingCart.total{
+                subTotalLabel.text = "R$\(subtotal)"
+                if shipping == 0 {
+                    shippingCostLabel.text = "GRÁTIS"
+                }else{
+                    shippingCostLabel.text = "R$\(shipping)"
+                }
+                taxLabel.text = "R$\(tax)"
+                totalLabel.text = "R$\(total)"
+            }
         }
     }
-    
 }

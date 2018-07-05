@@ -72,6 +72,7 @@ PODS:
     - nanopb/encode (= 0.3.8)
   - nanopb/decode (0.3.8)
   - nanopb/encode (0.3.8)
+  - Stripe (13.0.0)
   - TwitterCore (3.1.0)
   - TwitterKit (3.3.0):
     - TwitterCore (>= 3.1.0)
@@ -83,6 +84,7 @@ DEPENDENCIES:
   - Firebase/Database
   - Firebase/Storage
   - GoogleSignIn
+  - Stripe
   - TwitterKit
 
 SPEC CHECKSUMS:
@@ -102,9 +104,10 @@ SPEC CHECKSUMS:
   GTMSessionFetcher: ebaa1f79a5366922c1735f1566901f50beba23b7
   leveldb-library: 10fb39c39e243db4af1828441162405bbcec1404
   nanopb: 5601e6bca2dbf1ed831b519092ec110f66982ca3
+  Stripe: 542f2c4493ce31a99fa041fe4973206e8c868f29
   TwitterCore: 644d59e75abccb26cf0a9050d2c4dea0e5412241
   TwitterKit: a2e60ddcedbf54091eac6f27685ca7a87681e1d7
 
-PODFILE CHECKSUM: 7544ab282fa1da1750e052f47e9d549b69763f68
+PODFILE CHECKSUM: 4fd6e6ff864bfbb886673d149c217471c5987da1
 
 COCOAPODS: 1.4.0

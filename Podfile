@@ -11,5 +11,6 @@ pod 'Firebase/Storage'
 pod 'GoogleSignIn'
 pod 'FBSDKLoginKit'
 pod 'TwitterKit'
+pod 'Stripe'
 
 end

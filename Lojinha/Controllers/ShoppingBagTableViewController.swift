@@ -18,6 +18,7 @@ class ShoppingBagTableViewController: UITableViewController {
         static let cartDetailCell = "cartDetailCell"
         static let totalCell = "totalCell"
         static let checkoutButtonCell = "checkoutButtonCell"
+        static let showCheckout = "ShowCheckout"
     }
     
     override func viewDidLoad() {
@@ -39,6 +40,13 @@ class ShoppingBagTableViewController: UITableViewController {
         shoppingCart.fetch { [weak self] () in
             self?.products = self?.shoppingCart.products
             self?.tableView.reloadData()
+        }
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == Storyboard.showCheckout{
+            let checkoutTVC = segue.destination as! CheckoutTableViewController
+            checkoutTVC.shoppingCart = shoppingCart
         }
     }
 }
